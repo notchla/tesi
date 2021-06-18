@@ -10,14 +10,8 @@
 \contentsline {subsubsection}{Filtri Lineari}{7}
 \contentsline {subsubsection}{Filtri Non Lineari}{7}
 \contentsline {subsubsection}{Transform Domain Filtering}{7}
-\contentsline {subsection}{\numberline {1.3.2}subsection name}{7}
-\contentsline {subsection}{\numberline {1.3.3}Altra SottoSezione}{7}
-\contentsline {subsubsection}{SottoSottoSezione}{7}
-\contentsline {section}{\numberline {1.4}Altra Sezione}{8}
-\contentsline {section}{\numberline {1.5}Altra Sezione}{8}
-\contentsline {subsection}{\numberline {1.5.1}Listati dei programmi}{8}
-\contentsline {subsubsection}{Primo Listato}{8}
-\contentsline {chapter}{Conclusioni}{9}
-\contentsline {chapter}{\numberline {A}Prima Appendice}{11}
-\contentsline {chapter}{\numberline {B}Seconda Appendice}{13}
-\contentsline {chapter}{Bibliografia}{15}
+\contentsline {subsection}{\numberline {1.3.2}Algoritmi di Deep Learning per Denoising}{7}
+\contentsline {chapter}{Conclusioni}{13}
+\contentsline {chapter}{\numberline {A}Prima Appendice}{15}
+\contentsline {chapter}{\numberline {B}Seconda Appendice}{17}
+\contentsline {chapter}{Bibliografia}{19}

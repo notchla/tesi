@@ -30,6 +30,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per inserire grafici
 \usepackage{graphicx}
+\graphicspath{{../images/}}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per utilizzare font
                                         %   particolari ad esempio
@@ -192,46 +193,47 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     A differenza dei metodi spaziali, i metodi di trasformazione prima ottengono una trasformazione dell' immagine rumorosa e successivamente applicano la procedura di denoising sulla trasformazione.
     Si dividono in fitri Data adaptive e Non-Data adaptive.
 
-  \subsection{Algoritmi di Deep Learning}
+  \subsection{Algoritmi di Deep Learning per Denoising}
+    I metodi di \textbf{Machine Learning} si dividono in supervisionati, semi-supervisionati e non supervisionati. I metodi supervisionati utilizzano delle informazioni associate all' input (labels) per imparare dei parametri e allenare il modello di denoising. Per esempio dato il seguente modello \begin{equation*} y = x + \mu \end{equation*} dove x, y e $\mu$ rappresentano rispettivamente l' immagine originale, l' immagine rumorosa e un rumore additivo Gaussiano (AWGN) con deviazione standard $\sigma$. Il modello di denoising utilizza le coppie $ \{x_k, y_k\}^N_{k=1}$, dove $x_k$ e $y_k$ sono la k-esima immagine originale e l'immagine con rumore e N \'{e} il numero di immagini totali, per imparare i parametri. Il processo pu\`{o} essere descritto come \begin{equation*} x_k = f(y_k, \theta, m)\end{equation*} dove $\theta$ sono i parametri e m la quantit\`{a} di rumore. \\
+    I metodi non supervisionati invece utilizzano gli esempi di training per cercare patterns nel data, invece di fare label matching come nel caso supervisionato. Nel caso dei metodi semi-supervisionati invece si cerca di imparare una distribuzione del data in modo da poter assegnare labels ai dati che non ne hanno.\\
+    Le \textbf{Reti Neurali} sono alla base dei metodi di machine learning, che a loro volta sono alla base dei metodi di deep learning. La maggior parte delle reti neurali sono composte da neuroni, input $X$, funzioni di attivazione $f$, pesi $W = [W^0, W^1,...,W^{n-1}]$ e bias $b = [b^0, b^1, b^n-1]$. La funzione di attivazione puo convertire l'input lineare in una non linearit\`{a} rendendo la rete pi\`{u} espressiva.
+    \begin{equation}
+        f(X;W;b) = f(W^TX + b)
+    \end{equation}
 
+    Se la rete neurale ha pi\`{u} layer di profondit\`{a}, viene definita con il termine multilayer perceptron (MLP), e i layer tra l'input e l'output prendono il nome di hidden layer. La rete pu\`{o} essere espressa nel seguente modo
+    \begin{equation}
+      f(X;W;b) = f(W^{n-1}f(W^{n-2}...f(W^0X + b^0)...b^{n-1}) + b^n)
+    \end{equation}
 
+    \begin{figure}
+      \begin{center}
+        \includegraphics[scale=0.3]{mlp.png}
+        \caption[esempio di Feedforward Neural Network]{Rete neurale a due layer}
+        \label{fig:prima}
+      \end{center}
+    \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%crea una sottosezione
-\subsection{Altra SottoSezione}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%crea una sottosottosezione
-\subsubsection{SottoSottoSezione}Questa sottosottosezione non viene
-numerata, ma \`e solo scritta in grassetto.
-\section{Altra Sezione}                 %crea una sottosezione
-Vediamo la creazione di una tabella; la tabella \ref{tab:uno}
-(richiamo il nome della tabella utilizzando la label che ho messo sotto):
-la facciamo di tre righe e tre colonne, la prima colonna
-``incolonnata'' a destra (r) e le altre centrate (c):\\
-\begin{table}[h]                        %ambiente tabella
-                                        %(serve per avere la legenda)
-\begin{center}                          %centra nella pagina la tabella
-\begin{tabular}{r|c|c}                  %tre colonne con righe verticali
-                                        %   prodotte con |
-\hline \hline                           %inserisce due righe orizzontali
-$(1,1)$ & $(1,2)$ & $(1,3)$\\           %& separa le colonne e con
-\hline                                  %inserisce una riga orizzontale
-$(2,1)$ & $(2,2)$ & $(2,3)$\\           %  \\ va a capo
-\hline                                  %inserisce una riga orizzontale
-$(3,1)$ & $(3,2)$ & $(3,3)$\\
-\hline \hline                           %inserisce due righe orizzontali
-\end{tabular}
-\caption[legenda elenco tabelle]{legenda tabella}\label{tab:uno}
-\end{center}
-\end{table}
-\section{Altra Sezione}\label{sec:prova}%posso mettere le label anche
-                                        %   alle section
-\subsection{Listati dei programmi}
-\subsubsection{Primo Listato}
-\begin{verbatim}
-        In questo ambiente     posso scrivere      come voglio,
-lasciare gli spazi che voglio e non % commentare quando voglio
-e ci sar� scritto tutto.
-Quando lo uso � meglio che disattivi il Wrap del WinEdt
-\end{verbatim}
+    Questa rete completamente connessa presenta due layer : un hidden layer e un layer di output (Il layer di input solitamente non viene considerato come layer). I parametri $x_1, x_2, x_3 e o_1$ rappresentano l'input e l'output della rete. $ w_1, w_2, .., w_{12}$ sono i pesi e $b_1, b_2, b_3, b_4$ \`{e} il bias. Per esempio, l'output del neurone $h_1$ si ottiene come segue :
+    \begin{equation}
+      f(z_{h1}) = f(w1x1 + w4x2 + w7x3 + b1)
+    \end{equation}
+
+    \begin{equation}
+      o(h1) = f(z_{h1})
+    \end{equation}
+
+    Una volta calcolato l'output $o_1$ la rete usa un algoritmo di back propagation e una funzione di loss per imparare i parametri [back propagation citation]. Se il numero di layer \`{e} maggiore di tre, solitamente si fa riferimento alla rete con il nome \textbf{Deep Neural Network}. Nell' ambito dell' elaborazioni delle immagini una tipologia di rete neurale molto utilizzata \`{e} la \textbf{Convolutional Neural Network} (CNN). Un avanzamento importante alle CNNs \`{e} stato dato dalla funzione di attivazione ReLU [Rectified Linear Unit citation], migliorando la velocit\`{a} della discesa del gradiente stocastica (SGD) [citazione a deeplearning]. Sperimentalmente \`{e} stato osservato che se la rete \`{e} molto profonda, durante il training si possono presentare fenomini di annullameto o esplosione del gradiente; e se la rete \`{e} molto ampia, si pu\`{o} presentare il fenomeno dell' overfitting [citazione a deep learning su overfitting]. Per risolvere questi problemi nel 2016 \`{e} stato proposto un particolare tipo di rete, ResNet [citazione a resnet]. ResNet introduce il concetto di \textit{skip connection}: l'input di un layer \`{e} aggiunto all'output di un layer successivo. L' obbiettivo di una rete neurale \`{e} quello di modellizzare una funzione target $h(\textbf{x})$. Aggiungendo l' input \textbf{x} all' output della rete, allora la rete \`{e} costretta ad imparare una funzione $f(\textbf{x}) = h(\textbf{x}) - \textbf{x}$. Questa tecnica prende il nome di \textit{residual learning}.  Figura \ref{fig:seconda}.
+
+    \begin{figure}
+      \begin{center}
+        \includegraphics[scale=0.3]{resnet.png}
+        \caption[Residual Learning]{Un esempio di blocco residuo}
+        \label{fig:seconda}
+      \end{center}
+    \end{figure}
+
+    Quando si inizializza una rete neurale i suoi pesi sono vicini a zero e la rete restituisce in output valori vicini a zero. Aggiungendo una skip connection, la rete restituir\`{a} in output una copia del suo input; modellando inizialmente la funzione identit\`{a}. Se la funzione target \`{e} abbastanza vicina alla funzione di identit\`{a} (particolarmente vero per il problema del denoising), il residual learning velocizza l' apprendimento dei parametri in maniera considerevole. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%per fare le conclusioni
