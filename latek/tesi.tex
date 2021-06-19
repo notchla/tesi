@@ -193,17 +193,25 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     A differenza dei metodi spaziali, i metodi di trasformazione prima ottengono una trasformazione dell' immagine rumorosa e successivamente applicano la procedura di denoising sulla trasformazione.
     Si dividono in fitri Data adaptive e Non-Data adaptive.
 
-  \subsection{Algoritmi di Deep Learning per Denoising}
-    I metodi di \textbf{Machine Learning} si dividono in supervisionati, semi-supervisionati e non supervisionati. I metodi supervisionati utilizzano delle informazioni associate all' input (labels) per imparare dei parametri e allenare il modello di denoising. Per esempio dato il seguente modello \begin{equation*} y = x + \mu \end{equation*} dove x, y e $\mu$ rappresentano rispettivamente l' immagine originale, l' immagine rumorosa e un rumore additivo Gaussiano (AWGN) con deviazione standard $\sigma$. Il modello di denoising utilizza le coppie $ \{x_k, y_k\}^N_{k=1}$, dove $x_k$ e $y_k$ sono la k-esima immagine originale e l'immagine con rumore e N \'{e} il numero di immagini totali, per imparare i parametri. Il processo pu\`{o} essere descritto come \begin{equation*} x_k = f(y_k, \theta, m)\end{equation*} dove $\theta$ sono i parametri e m la quantit\`{a} di rumore. \\
+  \subsection{Deep Learning}
+    I metodi di \textbf{Machine Learning} si dividono in supervisionati, semi-supervisionati e non supervisionati. I metodi supervisionati utilizzano delle informazioni associate all' input (labels) per imparare dei parametri e trainare il modello di denoising. Per esempio dato il seguente modello \begin{equation*} y = x + \mu \end{equation*} dove x, y e $\mu$ rappresentano rispettivamente l' immagine originale, l' immagine rumorosa e un rumore additivo Gaussiano (AWGN) con deviazione standard $\sigma$. Il modello di denoising utilizza le coppie $ \{x_k, y_k\}^N_{k=1}$ per imparare i parametri della funzione $f$ che cerca di rimuovere il rumore, dove $x_k$ e $y_k$ sono la k-esima immagine originale e la k-esima immagine con rumore; N \'{e} il numero di immagini totali. Il processo pu\`{o} essere descritto come \begin{equation*} x_k = f(y_k, \theta, m)\end{equation*} dove $\theta$ sono i parametri e m la quantit\`{a} di rumore. \\
     I metodi non supervisionati invece utilizzano gli esempi di training per cercare patterns nel data, invece di fare label matching come nel caso supervisionato. Nel caso dei metodi semi-supervisionati invece si cerca di imparare una distribuzione del data in modo da poter assegnare labels ai dati che non ne hanno.\\
-    Le \textbf{Reti Neurali} sono alla base dei metodi di machine learning, che a loro volta sono alla base dei metodi di deep learning. La maggior parte delle reti neurali sono composte da neuroni, input $X$, funzioni di attivazione $f$, pesi $W = [W^0, W^1,...,W^{n-1}]$ e bias $b = [b^0, b^1, b^n-1]$. La funzione di attivazione puo convertire l'input lineare in una non linearit\`{a} rendendo la rete pi\`{u} espressiva.
+    Le \textbf{Reti Neurali} sono alla base dei metodi di machine learning, che a loro volta sono alla base dei metodi di deep learning. La maggior parte delle reti neurali sono composte da neuroni, input $X$, funzioni di attivazione $\phi$, pesi $W = [W^0, W^1,...,W^{n-1}]$ e bias $b = [b^0, b^1, b^n-1]$. A differenza dei modelli lineari come la regressione lineare e la regressione logistica, che possono modellizzare solo funzioni lineari senza comprendere l'interazioni tra due qualsiasi variabili di input, le reti neurali non applicano un modello lineare direttamente ad \textbf{x}. Viene utilizzata invece una trasformazione $\phi(\boldsymbol{x})$, dove $\phi$ \`{e} una trasformazione non lineare.
+
     \begin{equation}
-        f(X;W;b) = f(W^TX + b)
+        y = f(\boldsymbol{X}; \boldsymbol{b}, \boldsymbol{W}) = \phi(\boldsymbol{W}^T\boldsymbol{X} + \boldsymbol{b}).
     \end{equation}
 
-    Se la rete neurale ha pi\`{u} layer di profondit\`{a}, viene definita con il termine multilayer perceptron (MLP), e i layer tra l'input e l'output prendono il nome di hidden layer. La rete pu\`{o} essere espressa nel seguente modo
+    Se la rete neurale \`{e} composta da pi\`{u} "livelli" di profondit\`{a}, dati da funzioni di attivazione e pesi diversi, la rete viene definita con il termine \textbf{multilayer perceptrons} (MLPs) oppure \textbf{Deep feedforward networks} o \textbf{feedforward neural networks}. \\
+    L' obbiettivo delle reti feedforward \`{e} quello di approssimare una funzione $f^*$. Per esempio nel caso di un classificatore , $y = f^*(\textbf{x})$ mappa un input \textbf{x} ad una categoria $y$. Una rete feedforward definisce un mapping $\boldsymbol{y}=f(\boldsymbol{x} ; \boldsymbol{\theta})$ ed impara il valore dei parametri $\boldsymbol{\theta}$ che permettono a $f$ di meglio approssimare $f^*$.\\
+    Queste reti sono chiamate \textbf{feedforward} perch\`{e} le informazioni fluiscono dall' input \textbf{x}, attraverso le funzioni intermedie che compongono $f$, per arrivare all' output \textbf{y}. Non ci sono connessione \textbf{feedback} nelle quali l'output del modelo viene restituito al modello stesso.\\
+    Le feedforward neural networks vengono chiamate \textbf{networks} perch\`{e} tipicamente sono rappresentate dalla composizione funzioni diverse. Per esempio potremmo avere tre funzioni $f^{1}, f^{2}, f^{3}$ composte tra di loro per formare $f(\boldsymbol{x}) = f^{3}(f^{2}(f^{1}(\boldsymbol{x}))))$. In questo caso, $f^{1}$ \`{e} chiamato il primo layer, $f^{2}$ il secondo layer e cosi via. La lunghezza della catena definisce la \textbf{depth} del modello, da questa terminologia deriva il termine "deep learning". L'ultimo layer della rete neurale viene detto \textbf{output layer}. Durante il training della rete neurale , l' obbiettivo \`{e} quello di far assomigliare $f( \boldsymbol{x} )$ a $f^*(\boldsymbol{x})$. Il data di training \`{e} composto da dei punti \textbf{x}, ognuno associato ad una label $y \approx f^*(x)$. Il data di training specifica quale deve essere il comportamento dell' output layer per ogni punto \textbf{x}, cio\`{e} produrre valori vicini a y. L' algoritmo di training deve decidere come variare i parametri degli altri layer in modo tale da ottenere la migliore approssimazione di $f^*$, per fare questo viene utilizzata una \textbf{loss function} che descrive quanto il valore in output della rete su input $x$ sia "distante" secondo una qualche metrica dalla label associata. Siccome l'output dei layer intermedi non mostrano l'output desiderato, questo layer vengono chiamati \textbf{hidden layers}.
+
+    In fine questo tipo di reti vengono definite \textit{neurali} perch\`{e} sono ispirate alle neuroscienze. Ogni hidden layer della rete prende tipicamente in input un vettore di valori. La grandezza di questo vettore determina la \textbf{width} della rete. Ogni elemento di questo vettore pu\`{o} essere interpretato come un segnale per un neurone. Invece di pensare ad un hidden layer come una funzione che mappa un vettore in un altro, possiamo considerare ogni layer come composti da un insieme di \textbf{units} che operano in parallelo. Ogni unit ricorda un neurone, nel senso che riceve degli input da molte altre unit e computa la propria funzione di attivazione. Nonostante questa intuizione non bisogna pensare alle reti neurali come modellizzazioni del cervello, ma piuttosto come macchine che approssimano funzioni in modo tale da raggiungere una generalizzazione statistica del problema dato un insieme di esempi.
+
+    Una rete neurale pu\`{o} essere espressa nel seguente modo :
     \begin{equation}
-      f(X;W;b) = f(W^{n-1}f(W^{n-2}...f(W^0X + b^0)...b^{n-1}) + b^n)
+      f(X;W;b) = \phi^{n-1}(W^{n-1}\phi^{n-2}(W^{n-2}...\phi^0(W^0X + b^0)...b^{n-2}) + b^{n-1})
     \end{equation}
 
     \begin{figure}
@@ -214,7 +222,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       \end{center}
     \end{figure}
 
-    Questa rete completamente connessa presenta due layer : un hidden layer e un layer di output (Il layer di input solitamente non viene considerato come layer). I parametri $x_1, x_2, x_3 e o_1$ rappresentano l'input e l'output della rete. $ w_1, w_2, .., w_{12}$ sono i pesi e $b_1, b_2, b_3, b_4$ \`{e} il bias. Per esempio, l'output del neurone $h_1$ si ottiene come segue :
+    La rete neurale in figura \ref{fig:prima} completamente connessa presenta due layer : un hidden layer e un layer di output (Il layer di input solitamente non viene considerato come layer). I parametri $x_1, x_2, x_3$ e $o_1$ rappresentano l'input e l'output della rete. $ w_1, w_2, ..., w_{12}$ sono i pesi e $b_1, b_2, b_3, b_4$ \`{e} il bias. Per esempio, l'output del neurone $h_1$ si ottiene come segue :
     \begin{equation}
       f(z_{h1}) = f(w1x1 + w4x2 + w7x3 + b1)
     \end{equation}
@@ -223,7 +231,34 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       o(h1) = f(z_{h1})
     \end{equation}
 
-    Una volta calcolato l'output $o_1$ la rete usa un algoritmo di back propagation e una funzione di loss per imparare i parametri [back propagation citation]. Se il numero di layer \`{e} maggiore di tre, solitamente si fa riferimento alla rete con il nome \textbf{Deep Neural Network}. Nell' ambito dell' elaborazioni delle immagini una tipologia di rete neurale molto utilizzata \`{e} la \textbf{Convolutional Neural Network} (CNN). Un avanzamento importante alle CNNs \`{e} stato dato dalla funzione di attivazione ReLU [Rectified Linear Unit citation], migliorando la velocit\`{a} della discesa del gradiente stocastica (SGD) [citazione a deeplearning]. Sperimentalmente \`{e} stato osservato che se la rete \`{e} molto profonda, durante il training si possono presentare fenomini di annullameto o esplosione del gradiente; e se la rete \`{e} molto ampia, si pu\`{o} presentare il fenomeno dell' overfitting [citazione a deep learning su overfitting]. Per risolvere questi problemi nel 2016 \`{e} stato proposto un particolare tipo di rete, ResNet [citazione a resnet]. ResNet introduce il concetto di \textit{skip connection}: l'input di un layer \`{e} aggiunto all'output di un layer successivo. L' obbiettivo di una rete neurale \`{e} quello di modellizzare una funzione target $h(\textbf{x})$. Aggiungendo l' input \textbf{x} all' output della rete, allora la rete \`{e} costretta ad imparare una funzione $f(\textbf{x}) = h(\textbf{x}) - \textbf{x}$. Questa tecnica prende il nome di \textit{residual learning}.  Figura \ref{fig:seconda}.
+    Una volta calcolato l'output $o_1$ la rete usa un algoritmo di back propagation e una funzione di loss per imparare i parametri [back propagation citation]. Nell' ambito dell' elaborazioni delle immagini una tipologia di rete neurale molto utilizzata \`{e} la \textbf{Convolutional Neural Network} (CNN).\\
+    Le Convolutional Network sono delle reti neurali specializzate per processare del data con una topologia a griglia. Esempi includono serie temporali, che possono essere rappresentate come una griglia 1D prendendo osservazioni ad intervalli regolari, e immagini, rappresentabili come una griglia 2D di pixel. Il nome "convolutional network" indica che la rete utilizza una particolare operazione matematica lineare denominata \textbf{convoluzione}. Utilizziamo un esempio per spiegare l'operazione di convoluzione : supponiamo di voler tracciare la posizione di un astronave con un sensore laser. Il sensore restituisce un singolo output $x(t)$, la posizione dell' astronave al tempo t. sia $x$ che $t$ sono  valori reali.
+    Supponiamo che il sensore restituisca output rumorosi. Per ottenere una stima meno rumorosa della posizione della posizione dell' astronave vogliamo utilizzare una media pesata tra le misurazioni dando pi\`{u} importanza alle misurazioni recenti. Possiamo utilizzare una funzione di pesatura $w(\alpha)$, dove $\alpha$ \`{e} il tempo della misurazione. Applicando questa media pesata ad ogni istante, si ottiene una nuova funzione $s$ che indica una stima regolarizzata della posizione.
+    \begin{equation}
+      s(t)=\int x(a) w(t-a) d a
+      \label{eq:1}
+    \end{equation}
+    Questa operazione viene detta \textbf{convoluzione}. L' operazione viene tipicamente denotata con un asterisco.
+    \begin{equation*}
+      s(t)=(x * w)(t)
+    \end{equation*}
+    Nel nostro esempio, $w$ deve essere una funzione di densit\`{a} valida, altrimenti l'output non sarebbe una media pesata. Ma questo non \`{e} necessario per altri esempi, in generale la convoluzione \`{e} devinita per ogni coppia di funzioni dove l'integrale \ref{eq:1} \`{e} definito, e l'operazione pu\`{o} essere usata per altri scopi oltre alla media pesata.
+    Nella terminologia delle convoluzioni il primo termine, in questo caso la funzione $x$ prende il nome di \textbf{input}, il secondo argomento viene detto \textbf{kernel}. L'output viene indicato con il termine \textbf{feature map}.
+    Nelle applicazioni di machine learning, l'input \`{e} solitamente discretizzato e rappresentato da un array multidimensionale, e il kernel \`{e} rappresentato da un array multidimensionale di parametri adattati dall' algoritmo di apprendimento. Nel caso di immagini vogliamo definire la convoluzione su pi\`{u} assi. Per esempio con un immagine due-dimensionale $I$ come input, vogliamo utilizzare un kernel due-dimensionale $K$ :
+    \begin{equation*}
+      S(i, j)=(I * K)(i, j)=\sum_{m} \sum_{n} I(m, n) K(i-m, j-n)
+    \end{equation*}
+
+    \begin{figure}
+      \begin{center}
+        \includegraphics[scale=0.3]{convolution.png}
+        \caption[Rappresentazione dell' operazione di convoluzione]{Un esempio di convoluzione 2D}
+        \label{fig:terza}
+      \end{center}
+    \end{figure}
+
+    Le CNNs per come sono definite sono in grado di sfruttare le correlazioni spaziali dell' immagine [inserire citazione a deeplearning su proprieta cnns], preservando bordi e dettagli.\\
+    Un avanzamento importante alle CNNs \`{e} stato dato dalla funzione di attivazione ReLU [Rectified Linear Unit citation vedi deeplearning book], migliorando la velocit\`{a} della discesa del gradiente stocastica (SGD) [citazione a deeplearning], un metodo molto utilizzato per il training dei parametri del kernel. Sperimentalmente \`{e} stato osservato che se la rete \`{e} molto profonda, durante il training si possono presentare fenomini di annullameto o esplosione del gradiente; e se la rete \`{e} molto ampia, si pu\`{o} presentare il fenomeno dell' overfitting [citazione a deep learning su overfitting]. Per risolvere questi problemi nel 2016 \`{e} stato proposto un particolare tipo di rete, ResNet [citazione a resnet]. ResNet introduce il concetto di \textit{skip connection}: l'input di un layer \`{e} aggiunto all'output di un layer successivo. L' obbiettivo di una rete neurale \`{e} quello di modellizzare una funzione target $h(\textbf{x})$. Aggiungendo l' input \textbf{x} all' output della rete, allora la rete \`{e} costretta ad imparare una funzione $f(\textbf{x}) = h(\textbf{x}) - \textbf{x}$. Questa tecnica prende il nome di \textit{residual learning}.  Figura \ref{fig:seconda}.
 
     \begin{figure}
       \begin{center}
@@ -233,7 +268,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       \end{center}
     \end{figure}
 
-    Quando si inizializza una rete neurale i suoi pesi sono vicini a zero e la rete restituisce in output valori vicini a zero. Aggiungendo una skip connection, la rete restituir\`{a} in output una copia del suo input; modellando inizialmente la funzione identit\`{a}. Se la funzione target \`{e} abbastanza vicina alla funzione di identit\`{a} (particolarmente vero per il problema del denoising), il residual learning velocizza l' apprendimento dei parametri in maniera considerevole. 
+    Quando si inizializza una rete neurale i suoi pesi sono vicini a zero e la rete restituisce in output valori vicini a zero. Aggiungendo una skip connection, la rete restituir\`{a} in output una copia del suo input; modellando inizialmente la funzione identit\`{a}. Se la funzione target \`{e} abbastanza vicina alla funzione di identit\`{a} (particolarmente vero per il problema del denoising), il residual learning velocizza l' apprendimento dei parametri in maniera considerevole.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%per fare le conclusioni
