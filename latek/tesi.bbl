@@ -1,0 +1,562 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{boyat_review_2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ad5f3f713bf8e396753f8240184cfe91}{%
+           family={Boyat},
+           familyi={B\bibinitperiod},
+           given={Ajay\bibnamedelima Kumar},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=d6aa82a1ffd4e8817c9039e1648f066a}{%
+           family={Joshi},
+           familyi={J\bibinitperiod},
+           given={Brijendra\bibnamedelima Kumar},
+           giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{1f08399e8c318062afc4616853f6f18e}
+      \strng{fullhash}{1f08399e8c318062afc4616853f6f18e}
+      \strng{bibnamehash}{1f08399e8c318062afc4616853f6f18e}
+      \strng{authorbibnamehash}{1f08399e8c318062afc4616853f6f18e}
+      \strng{authornamehash}{1f08399e8c318062afc4616853f6f18e}
+      \strng{authorfullhash}{1f08399e8c318062afc4616853f6f18e}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Noise is always presents in digital images during image acquisition, coding, transmission, and processing steps. Noise is very difficult to remove it from the digital images without the prior knowledge of noise model. That is why, review of noise models are essential in the study of image denoising techniques. In this paper, we express a brief overview of various noise models. These noise models can be selected by analysis of their origin. In this way, we present a complete and quantitative analysis of noise models available in digital images.}
+      \field{issn}{22293922, 0976710X}
+      \field{journaltitle}{Signal \& Image Processing : An International Journal}
+      \field{month}{4}
+      \field{number}{2}
+      \field{shorttitle}{A {Review} {Paper}}
+      \field{title}{A {Review} {Paper} : {Noise} {Models} in {Digital} {Image} {Processing}}
+      \field{urlday}{16}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{6}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{63\bibrangedash 75}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.5121/sipij.2015.6206
+      \endverb
+      \verb{file}
+      \verb Boyat and Joshi - 2015 - A Review Paper Noise Models in Digital Image Pro.pdf:/home/notchla/Zotero/storage/T4LGB8A9/Boyat and Joshi - 2015 - A Review Paper Noise Models in Digital Image Pro.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.aircconline.com/sipij/V6N2/6215sipij06.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.aircconline.com/sipij/V6N2/6215sipij06.pdf
+      \endverb
+    \endentry
+    \entry{diwakar_review_2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a27fac5ece6ebd5b41875f3b0de99bdf}{%
+           family={Diwakar},
+           familyi={D\bibinitperiod},
+           given={Manoj},
+           giveni={M\bibinitperiod}}}%
+        {{hash=939a07ef95f263a77489acec648a3070}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Manoj},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{3d116ad0a64e8f9e4eaf16a9cc7f9f0e}
+      \strng{fullhash}{3d116ad0a64e8f9e4eaf16a9cc7f9f0e}
+      \strng{bibnamehash}{3d116ad0a64e8f9e4eaf16a9cc7f9f0e}
+      \strng{authorbibnamehash}{3d116ad0a64e8f9e4eaf16a9cc7f9f0e}
+      \strng{authornamehash}{3d116ad0a64e8f9e4eaf16a9cc7f9f0e}
+      \strng{authorfullhash}{3d116ad0a64e8f9e4eaf16a9cc7f9f0e}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{17468094}
+      \field{journaltitle}{Biomedical Signal Processing and Control}
+      \field{month}{4}
+      \field{title}{A review on {CT} image noise and its denoising}
+      \field{urlday}{14}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{42}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{73\bibrangedash 88}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/j.bspc.2018.01.010
+      \endverb
+      \verb{file}
+      \verb Diwakar and Kumar - 2018 - A review on CT image noise and its denoising.pdf:/home/notchla/Zotero/storage/75ZIR5G9/Diwakar and Kumar - 2018 - A review on CT image noise and its denoising.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1746809418300107
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1746809418300107
+      \endverb
+    \endentry
+    \entry{fan_brief_2019}{article}{}
+      \name{author}{4}{}{%
+        {{hash=d471dca6d4cba307383951beae78670e}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Linwei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ae021641a8f85fd2607152ab99ed115b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Fan},
+           giveni={F\bibinitperiod}}}%
+        {{hash=27beedb1e77a8c0816fc622614ac4e08}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=317109e5efd6b04b2dcc18b15fab760a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Caiming},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{366ff02f5d2744c9c9701c2c9474ef06}
+      \strng{fullhash}{78b05ced0e7f463315eb2284b327f16f}
+      \strng{bibnamehash}{366ff02f5d2744c9c9701c2c9474ef06}
+      \strng{authorbibnamehash}{366ff02f5d2744c9c9701c2c9474ef06}
+      \strng{authornamehash}{366ff02f5d2744c9c9701c2c9474ef06}
+      \strng{authorfullhash}{78b05ced0e7f463315eb2284b327f16f}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With the explosion in the number of digital images taken every day, the demand for more accurate and visually pleasing images is increasing. However, the images captured by modern cameras are inevitably degraded by noise, which leads to deteriorated visual image quality. Therefore, work is required to reduce noise without losing image features (edges, corners, and other sharp structures). So far, researchers have already proposed various methods for decreasing noise. Each method has its own advantages and disadvantages. In this paper, we summarize some important research in the field of image denoising. First, we give the formulation of the image denoising problem, and then we present several image denoising techniques. In addition, we discuss the characteristics of these techniques. Finally, we provide several promising directions for future research.}
+      \field{issn}{2524-4442}
+      \field{journaltitle}{Visual Computing for Industry, Biomedicine, and Art}
+      \field{month}{12}
+      \field{number}{1}
+      \field{title}{Brief review of image denoising techniques}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{2}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{7}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s42492-019-0016-7
+      \endverb
+      \verb{file}
+      \verb Fan et al. - 2019 - Brief review of image denoising techniques.pdf:/home/notchla/Zotero/storage/V6W28IBZ/Fan et al. - 2019 - Brief review of image denoising techniques.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://vciba.springeropen.com/articles/10.1186/s42492-019-0016-7
+      \endverb
+      \verb{url}
+      \verb https://vciba.springeropen.com/articles/10.1186/s42492-019-0016-7
+      \endverb
+    \endentry
+    \entry{gondara_medical_2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=75d25fafcd8baf3e07806a57728a62f8}{%
+           family={Gondara},
+           familyi={G\bibinitperiod},
+           given={Lovedeep},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{75d25fafcd8baf3e07806a57728a62f8}
+      \strng{fullhash}{75d25fafcd8baf3e07806a57728a62f8}
+      \strng{bibnamehash}{75d25fafcd8baf3e07806a57728a62f8}
+      \strng{authorbibnamehash}{75d25fafcd8baf3e07806a57728a62f8}
+      \strng{authornamehash}{75d25fafcd8baf3e07806a57728a62f8}
+      \strng{authorfullhash}{75d25fafcd8baf3e07806a57728a62f8}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Image denoising is an important pre-processing step in medical image analysis. Different algorithms have been proposed in past three decades with varying denoising performances. More recently, having outperformed all conventional methods, deep learning based models have shown a great promise. These methods are however limited for requirement of large training sample size and high computational costs. In this paper we show that using small sample size, denoising autoencoders constructed using convolutional layers can be used for efﬁcient denoising of medical images. Heterogeneous images can be combined to boost sample size for increased denoising performance. Simplest of networks can reconstruct images with corruption levels so high that noise and signal are not differentiable to human eye.}
+      \field{journaltitle}{2016 IEEE 16th International Conference on Data Mining Workshops (ICDMW)}
+      \field{month}{12}
+      \field{note}{arXiv: 1608.04667}
+      \field{title}{Medical image denoising using convolutional denoising autoencoders}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{241\bibrangedash 246}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICDMW.2016.0041
+      \endverb
+      \verb{file}
+      \verb Gondara - 2016 - Medical image denoising using convolutional denois.pdf:/home/notchla/Zotero/storage/PSZ6KC9E/Gondara - 2016 - Medical image denoising using convolutional denois.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1608.04667
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1608.04667
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition,Statistics - Machine Learning}
+    \endentry
+    \entry{Goodfellow-et-al-2016}{book}{}
+      \name{author}{3}{}{%
+        {{hash=5d2585c11210cf1d4512e6e0a03ec315}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{fullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{bibnamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authorbibnamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authornamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authorfullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{http://www.deeplearningbook.org}}
+      \field{title}{Deep Learning}
+      \field{year}{2016}
+    \endentry
+    \entry{he_deep_2015}{article}{}
+      \name{author}{4}{}{%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5e72bc22dbcf0984c6d113d280e36990}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiangyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bb295293acacd54387339079ebbe4ead}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shaoqing},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f85751488058842b5777c7b4074077b5}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{fullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{bibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorfullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57\% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28\% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC \& COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.}
+      \field{journaltitle}{arXiv:1512.03385 [cs]}
+      \field{month}{12}
+      \field{note}{arXiv: 1512.03385}
+      \field{title}{Deep {Residual} {Learning} for {Image} {Recognition}}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb arXiv Fulltext PDF:/home/notchla/Zotero/storage/ZJ2WF9R8/He et al. - 2015 - Deep Residual Learning for Image Recognition.pdf:application/pdf;arXiv.org Snapshot:/home/notchla/Zotero/storage/ZKUSYPG6/1512.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1512.03385
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1512.03385
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{jain_survey_2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=35a06f468dc50bf4f69e24e795b5e1ea}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Paras},
+           giveni={P\bibinitperiod}}}%
+        {{hash=df9258348be2b2fedc01d54d1b3bb11a}{%
+           family={Tyagi},
+           familyi={T\bibinitperiod},
+           given={Vipin},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{736723ad877a9c33e07d02c85b0592d0}
+      \strng{fullhash}{736723ad877a9c33e07d02c85b0592d0}
+      \strng{bibnamehash}{736723ad877a9c33e07d02c85b0592d0}
+      \strng{authorbibnamehash}{736723ad877a9c33e07d02c85b0592d0}
+      \strng{authornamehash}{736723ad877a9c33e07d02c85b0592d0}
+      \strng{authorfullhash}{736723ad877a9c33e07d02c85b0592d0}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Reducing noise has always been one of the standard problems of the image analysis and processing community. Often though, at the same time as reducing the noise in a signal, it is important to preserve the edges. Edges are of critical importance to the visual appearance of images. So, it is desirable to preserve important features, such as edges, corners and other sharp structures, during the denoising process. This paper presents a review of some significant work in the area of image denoising. It provides a brief general classification of image denoising methods. The main aim of this survey is to provide evolution of research in the direction of edge-preserving image denoising. It characterizes some of the well known edge-preserving denoising methods, elaborating each of them, and discusses the advantages and drawbacks of each. Basic ideas and improvement of the denoising methods are also comprehensively summarized and analyzed in depth. Often, researchers face difficulty in selecting an appropriate denoising method that is specific to their purpose. We have classified and systemized these denoising methods. The key goal of this paper is to provide researchers with background on a progress of denoising methods so as to make it easier for researchers to choose the method best suited to their aims.}
+      \field{issn}{1572-9419}
+      \field{journaltitle}{Information Systems Frontiers}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{A survey of edge-preserving image denoising methods}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{18}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{159\bibrangedash 170}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1007/s10796-014-9527-0
+      \endverb
+      \verb{file}
+      \verb Springer Full Text PDF:/home/notchla/Zotero/storage/LDEEMCG7/Jain and Tyagi - 2016 - A survey of edge-preserving image denoising method.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10796-014-9527-0
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10796-014-9527-0
+      \endverb
+    \endentry
+    \entry{manson_image_nodate}{article}{}
+      \name{author}{6}{}{%
+        {{hash=b2edd8755da672e15f103c8ab0bb681a}{%
+           family={Manson},
+           familyi={M\bibinitperiod},
+           given={EN},
+           giveni={E\bibinitperiod}}}%
+        {{hash=84eb3b59b9dc06d83e3723353b3500dc}{%
+           family={Ampoh},
+           familyi={A\bibinitperiod},
+           given={V\bibnamedelima Atuwo},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=02d586d3fd9b0784ea076b0a4a10d91d}{%
+           family={Fiagbedzi},
+           familyi={F\bibinitperiod},
+           given={E},
+           giveni={E\bibinitperiod}}}%
+        {{hash=41ec7ec208c8b71b5ca9a1060e56717f}{%
+           family={Amuasi},
+           familyi={A\bibinitperiod},
+           given={J\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=61427d3690a7d331e93dc8b1c4872104}{%
+           family={Flether},
+           familyi={F\bibinitperiod},
+           given={J\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=00a77409ad7ba7f5268980b136315539}{%
+           family={Schandorf},
+           familyi={S\bibinitperiod},
+           given={C},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{0e93ca38de0fc8005f808873bf2c7830}
+      \strng{fullhash}{e3ca69f0d7021e90cea9cf0dccd51b9e}
+      \strng{bibnamehash}{0e93ca38de0fc8005f808873bf2c7830}
+      \strng{authorbibnamehash}{0e93ca38de0fc8005f808873bf2c7830}
+      \strng{authornamehash}{0e93ca38de0fc8005f808873bf2c7830}
+      \strng{authorfullhash}{e3ca69f0d7021e90cea9cf0dccd51b9e}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The presence of noise in images produced by medical imaging equipment is common and unavoidable. Image noise can obscure and stimulate pathology, even sometimes to the extent of making them diagnostically unusable. To minimize noise in medical images, it is essential to comprehend the sources of noise and how they occur. In this paper, we have reviewed different sources of noise that are present in images produced in radiography and tomography imaging techniques, the causes, effects and the various ways that are employed in their reduction. In order to completely eliminate noise in radiological imaging systems, we recommend that detectors that are free from noise should be designed and incorporated into future imaging systems.}
+      \field{journaltitle}{Medical Imaging}
+      \field{title}{Image {Noise} in {Radiography} and {Tomography}: {Causes}, {Effects} and {Reduction} {Techniques}}
+      \field{pages}{6}
+      \range{pages}{1}
+      \verb{file}
+      \verb Manson et al. - Image Noise in Radiography and Tomography Causes,.pdf:/home/notchla/Zotero/storage/PYE8ICAU/Manson et al. - Image Noise in Radiography and Tomography Causes,.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{tian_deep_2020}{article}{}
+      \name{author}{6}{}{%
+        {{hash=a19152e724e441499c891fff4e4585b9}{%
+           family={Tian},
+           familyi={T\bibinitperiod},
+           given={Chunwei},
+           giveni={C\bibinitperiod}}}%
+        {{hash=acf42c10c761dd958a0d076317468698}{%
+           family={Fei},
+           familyi={F\bibinitperiod},
+           given={Lunke},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f09f58f3e7a83fac5c6d33e4e4d3a3da}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Wenxian},
+           giveni={W\bibinitperiod}}}%
+        {{hash=90812e2aac1e3fb393dfd7663b4eefe1}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Yong},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=509ab736fbc2f1e10f41c1bddb2531ed}{%
+           family={Zuo},
+           familyi={Z\bibinitperiod},
+           given={Wangmeng},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d563bc665c9b161336abdc5f8129feca}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Chia-Wen},
+           giveni={C\bibinithyphendelim W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d5e2a19ed54cdd1952f47bc102555478}
+      \strng{fullhash}{cc0a026b783fb3f8f51038f7a361cab2}
+      \strng{bibnamehash}{d5e2a19ed54cdd1952f47bc102555478}
+      \strng{authorbibnamehash}{d5e2a19ed54cdd1952f47bc102555478}
+      \strng{authornamehash}{d5e2a19ed54cdd1952f47bc102555478}
+      \strng{authorfullhash}{cc0a026b783fb3f8f51038f7a361cab2}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Deep learning techniques have received much attention in the area of image denoising. However, there are substantial differences in the various types of deep learning methods dealing with image denoising. Speciﬁcally, discriminative learning based on deep learning can ably address the issue of Gaussian noise. Optimization models based on deep learning are effective in estimating the real noise. However, there has thus far been little related research to summarize the different deep learning techniques for image denoising. In this paper, we offer a comparative study of deep techniques in image denoising. We ﬁrst classify the deep convolutional neural networks (CNNs) for additive white noisy images; the deep CNNs for real noisy images; the deep CNNs for blind denoising and the deep CNNs for hybrid noisy images, which represents the combination of noisy, blurred and low-resolution images. Then, we analyze the motivations and principles of the different types of deep learning methods. Next, we compare the state-of-the-art methods on public denoising datasets in terms of quantitative and qualitative analysis. Finally, we point out some potential challenges and directions of future research.}
+      \field{journaltitle}{arXiv:1912.13171 [cs, eess]}
+      \field{month}{8}
+      \field{note}{arXiv: 1912.13171}
+      \field{shorttitle}{Deep {Learning} on {Image} {Denoising}}
+      \field{title}{Deep {Learning} on {Image} {Denoising}: {An} overview}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Tian et al. - 2020 - Deep Learning on Image Denoising An overview.pdf:/home/notchla/Zotero/storage/CZGX59IB/Tian et al. - 2020 - Deep Learning on Image Denoising An overview.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1912.13171
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1912.13171
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition,Electrical Engineering and Systems Science - Image and Video Processing}
+    \endentry
+    \entry{xu_empirical_2015}{article}{}
+      \name{author}{4}{}{%
+        {{hash=743dd6cdaa6639320289d219d351d7b7}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7b94afca49a5fad9a08434bbb6abf1ce}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Naiyan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=48461ccdf50ba5a54e29a354aa734c0b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Tianqi},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c4a02f87e51fc72ab3f841de1a3982a7}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Mu},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{070ef871c1684789344f844eea89b4e5}
+      \strng{fullhash}{bae11344e4dd597130a8235917d040c9}
+      \strng{bibnamehash}{070ef871c1684789344f844eea89b4e5}
+      \strng{authorbibnamehash}{070ef871c1684789344f844eea89b4e5}
+      \strng{authornamehash}{070ef871c1684789344f844eea89b4e5}
+      \strng{authorfullhash}{bae11344e4dd597130a8235917d040c9}
+      \field{sortinit}{X}
+      \field{sortinithash}{b0b62a29ee4a21a0e618fed53a0313cc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we investigate the performance of diﬀerent types of rectiﬁed activation functions in convolutional neural network: standard rectiﬁed linear unit (ReLU), leaky rectiﬁed linear unit (Leaky ReLU), parametric rectiﬁed linear unit (PReLU) and a new randomized leaky rectiﬁed linear units (RReLU). We evaluate these activation function on standard image classiﬁcation task. Our experiments suggest that incorporating a nonzero slope for negative part in rectiﬁed activation units could consistently improve the results. Thus our ﬁndings are negative on the common belief that sparsity is the key of good performance in ReLU. Moreover, on small scale dataset, using deterministic negative slope or learning it are both prone to overﬁtting. They are not as eﬀective as using their randomized counterpart. By using RReLU, we achieved 75.68\% accuracy on CIFAR-100 test set without multiple test or ensemble.}
+      \field{journaltitle}{arXiv:1505.00853 [cs, stat]}
+      \field{month}{11}
+      \field{note}{arXiv: 1505.00853}
+      \field{title}{Empirical {Evaluation} of {Rectified} {Activations} in {Convolutional} {Network}}
+      \field{urlday}{19}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Xu et al. - 2015 - Empirical Evaluation of Rectified Activations in C.pdf:/home/notchla/Zotero/storage/FS6AJX33/Xu et al. - 2015 - Empirical Evaluation of Rectified Activations in C.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1505.00853
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1505.00853
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

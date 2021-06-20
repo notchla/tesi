@@ -45,10 +45,9 @@
 %
 
 \usepackage{tabto}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{tesi.bib}
 \oddsidemargin=30pt \evensidemargin=20pt%impostano i margini
-\hyphenation{sil-la-ba-zio-ne pa-ren-te-si}%serve per la sillabazione: tra parentesi
-					   %vanno inserite come nell'esempio le parole
-%					   %che latex non riesce a tagliare nel modo giusto andando a capo.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%comandi per l'impostazione
                                         %   della pagina, vedi il manuale
@@ -115,16 +114,15 @@ INDICE}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}}
 \pagenumbering{arabic}                  %mette i numeri arabi
-Questo \`e il primo capitolo.
 \section{Imaging}                 %crea la sezione
-Con il termine \textbf{medical imaging} ci si riferisce alla generica tecnica o processo di imaging attraveso il quale \'{e} possibile osservare un' area di un organismo non visibile dall'esterno, per analisi cliniche o una rappresentazione visiva delle funzioni di organi e tessuti.\\
-Una \textbf{radiografia} \'{e} una tecnica di imaging che produce un radiogramma. Tale tecnica si basa sull' utilizzo di un fascio di fotoni, come raggi X o raggi Gamma, generati da una sorgente, passanti per della materia e catturati da un recettore. Durante il passaggio per il corpo interposto i raggi sono assorbiti o attenutati in maniera differente l'uno dall'altro creando un insieme di raggi di diversa intensit\`{a}. Il recettore trasforma questo insieme di raggi di diversa concentrazione in un immagine "in negativo" del corpo, essendo catturati dal recettore i fotoni che non vengono assorbiti.\\
-L'assorbimento dovuto alle diverse composizioni elementali del corpo gioca un ruolo fondamentale nell' imaging medico. Il processo di assorbimento \'{e} proporzionale al numero atomico della materia attraversata e questo permette di distinguere la materia grigia dalla materia bianca nell'immagine generata. Per esempio tra il sangue e il muscolo non \'{e} osservabile un contrasto elevato, essendo la densit\`{a} degli elementi che li compongono molto simile. Per generare un contrasto tra i due \'{e} necessario iniettare un liquido di contrasto composto da elementi con un alto numero atomico durante l'esposizione ai raggi.\\
-I recettori localizzati in maniera opposta alla sorgente dei raggi ricevono i fasci di fotoni e generano un segnale elettrico. Questo segnale elettrico deve essere convertito in un segnale digitale da un convertitore analogico/digitale.
+Con il termine \textbf{medical imaging} ci si riferisce alla generica tecnica o processo attraveso il quale \`{e} possibile osservare un' area di un organismo non visibile dall'esterno; per analisi cliniche o una rappresentazione visiva delle funzioni di organi e tessuti.\\
+Una \textbf{radiografia} \`{e} una tecnica di imaging che produce un radiogramma. Tale tecnica si basa sull' utilizzo di un fascio di \textbf{fotoni}, come raggi X o raggi Gamma, generati da una sorgente e catturati da un \textbf{recettore}. \\Durante il passaggio per il corpo interposto tra la sorgente e il recettore, i raggi sono assorbiti o attenutati in maniera differente l'uno dall'altro creando un insieme di raggi di diversa intensit\`{a}. Il recettore trasforma questo insieme di raggi di diversa concentrazione in un immagine "in negativo" del corpo, essendo catturati dal recettore solo i fotoni che non vengono assorbiti dall' oggetto.\\
+L'assorbimento dovuto alle diverse composizioni elementali del corpo gioca un ruolo fondamentale nell' imaging medico. Il processo di assorbimento \`{e} proporzionale al \textbf{numero atomico} della materia attraversata e questo permette di distinguere la materia grigia dalla materia bianca nell'immagine generata. Per esempio tra il sangue e il muscolo non \`{e} osservabile un contrasto elevato, essendo la densit\`{a} degli elementi che li compongono molto simile. Per generare un contrasto tra i due \`{e} necessario iniettare un liquido di contrasto composto da elementi con un alto numero atomico durante l'esposizione ai raggi.\\
+I recettori localizzati in maniera opposta alla sorgente dei raggi, ricevono i fasci di fotoni e generano un segnale elettrico. Questo segnale elettrico deve essere convertito in un segnale digitale da un convertitore analogico/digitale e successivamente in un immagine. \cite{diwakar_review_2018}.
 
 
 \section{Rumore}
-Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine costruita, i fattori principali sono :
+Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine costruita \cite{diwakar_review_2018, manson_image_nodate}, i fattori principali sono :
   \begin{itemize}
     \item Blurring: l' immagine potrebbe risultare sfocata per diverse ragioni, i motivi principali sono:
       \begin{enumerate}
@@ -133,42 +131,42 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
         \item Fluttuazioni dei valori dei pixel dell' immagine in una regione di materiale uniforme.
         \item Gli algoritmi usati per filtrare i raggi sfocano l'immagine.
       \end{enumerate}
-      \item Field of View (FOV): La dimensione della regione anatomica inclusa nella scansione viene detta field of view. Se la dimensione della regione \'{e} troppo grande o troppo piccola, la qualit\`{a} dell' immagine potrebbe risultare degradata.
+      \item Field of View (FOV): La dimensione della regione anatomica inclusa nella scansione viene detta field of view. Se la dimensione della regione \`{e} troppo grande o troppo piccola, la qualit\`{a} dell' immagine potrebbe risultare degradata.
       \item Artefatti: Gli artefatti sono distorsioni o errori nell' immagine digitale che non dipendono dall' oggetto scansionato. Gli artefatti pi\`{u} comuni sono:
       \begin{enumerate}
         \item Beam Hardening: Beam Hardening avviene quando l'energia media di un raggio passante per il paziente aumenta. Per evitare che ci\`{o} avvenga alcune soluzioni possono essere messe in pratica, aumentare il kvp(peak kilovoltage), decrementare la grandezza delle slice(in caso di tomografia computerizzata), pre-filtrare i raggi, evitare regioni ad alto assorbimento, soluzioni algorimiche.
-        \item Artefatti metallici: Materiali metallici possono causare soprattutto nelle CT i cosiddetti streaking artifacts (fasci di luce), dovuti dal blocco delle informazioni di proiezione. Per ridurre questo fenomeno \'{e} necessario rimuovere il materiale metallico se possibile.
+        \item Artefatti metallici: Materiali metallici possono causare soprattutto nelle CT i cosiddetti streaking artifacts (fasci di luce), dovuti dal blocco delle informazioni di proiezione. Per ridurre questo fenomeno \`{e} necessario rimuovere il materiale metallico se possibile.
         \item Movimento del paziente: Il movimenti volontari o involontari del paziente possono produrre streaking artifacts. Si pu\`{o} ridurre il tempo di scansione e migliorare il posizionamento del paziente.
         \item Software e Hardware: Artefatti derivanti da implementazioni o configurazioni scorrette di algotimi di costruzione dell'immagine digitale o degradazione dei componenti elettronici e meccanici.
       \end{enumerate}
-      \item Rumore Visivo: Il rumore visivo \'{e} una variazione casuale della luminosit\`{a} dei singoli pixel dell' immagine. Questo tipo di rumore deriva di solito da errori nell' acquisizione, trasmissione del segnale ed errori computazionali matematici. Questo tipo di rumore ha una maggiore influenza su soggetti a basso contrasto.
+      \item Rumore Visivo: Il rumore visivo \`{e} una variazione casuale della luminosit\`{a} dei singoli pixel dell' immagine. Questo tipo di rumore deriva di solito da errori nell' acquisizione, trasmissione del segnale ed errori computazionali matematici. Questo tipo di rumore ha una maggiore influenza su soggetti a basso contrasto.
   \end{itemize}
-  La dose di radiazioni a cui \'{e} sottoposto il paziente \'{e} uno dei fattori pi\`{u} importanti nella generazione di rumore. Per la sicurezza del paziente \'{e} necessario minimizzare il tempo di esposizione alle radiazioni, ma la conseguenza principale nel ridurre la dose di radiazioni \'{e} un aumento del rumore dell'immagine facendo diminuire la qualit\`{a} della diagnosi.\\
+  La dose di radiazioni a cui \`{e} sottoposto il paziente \`{e} uno dei fattori pi\`{u} importanti nella generazione di rumore. Per la sicurezza del paziente \`{e} necessario minimizzare il tempo di esposizione alle radiazioni, ma la conseguenza principale nel ridurre la dose di radiazioni \`{e} un aumento del rumore dell'immagine facendo diminuire la qualit\`{a} della diagnosi.\\
   Ci sono due approcci principali per cercare di ridurre il rumore visivo senza sacrificare la qualit\`{a} dell'immagine:
   \begin{enumerate}
     \item Facendo uno studio ed una ottimizzazione della dose di radiazioni le immagini a bassa dose di radiazioni possono essere migliorate.
-    \item La qualit\`{a} dell' immagine pu\`{o} essre migliorata sviluppando algoritmi per la rimozione del rumore nelle immagini. Questi algoritmi possono essere successivamente utilizzati per ridurre la dose di radiazioni. Il processo di rimozione di rumore da immagini \'{e} conosciuto con il termine di \textbf{image denoising}.
+    \item La qualit\`{a} dell' immagine pu\`{o} essere migliorata sviluppando algoritmi per la rimozione del rumore nelle immagini. Questi algoritmi possono essere successivamente utilizzati per ridurre la dose di radiazioni. Il processo di rimozione di rumore da immagini \`{e} conosciuto con il termine di \textbf{image denoising}.
   \end{enumerate}
 
-  Le radiografie sono caratterizzate da una sensitibilit\`{a} ai contrasti, che permettono di distinguere tra i tessuti molli del corpo umano. Questa caratteristica \'{e} particolarmente influenzata dal rumore che nuoce alla visualizzazione delle strutture a basso contrasto.\\
+  Le radiografie sono caratterizzate da una sensitibilit\`{a} ai contrasti che permettono di distinguere tra i diversi tessuti molli del corpo umano. Questa caratteristica \`{e} particolarmente influenzata dal rumore che nuoce alla visualizzazione delle strutture a basso contrasto.\\
   Prima di considerare tecniche di image denoising \'{e} necessario comprendere quali sono le sorgenti principali di rumore visivo:
 
-  \textbf{Rumore randomico e statistico:} Pu\`{o} essere generato dalla ricezzione di un numero finito di quanti (pacchetti di energia) di raggi da parte del recettore. Durante il processo non c'\'{e} nessuna forza che distribuisce i fotoni in maniera uniforme sulla superfice, un area del recettore potrebbe percepire pi\`{u} fotoni di un altra. La causa principale di questo rumore \'{e} la cosiddetta radiazione secondaria, prodotta dall'interazione dei fotoni emessi dal generatore con il corpo in scansione, disperdendo ulteriormente in maniera casuale le particelle. Il risultato del rumore viene percepito come una fluttuazione nella densit\`{a} dell' immagine. Come risultato si ha che il cambiamento della densit\`{a} dell' immagine \'{e} impredicibile con comportamento randomico. Questo tipo di rumore \`{e} anche chiamato \textbf{rumore quantico}.
+  \textbf{Rumore randomico e statistico:} Pu\`{o} essere generato dalla ricezione di un numero finito di quanti (pacchetti di energia) di raggi da parte del recettore. Durante il processo non c'\`{e} nessuna forza che distribuisce i fotoni in maniera uniforme sulla superfice, un area del recettore potrebbe percepire pi\`{u} fotoni di un altra. La causa principale di questo rumore \`{e} la cosiddetta radiazione secondaria \cite{manson_image_nodate}, prodotta dall'interazione dei fotoni emessi dal generatore con il corpo in scansione, disperdendo ulteriormente in maniera casuale le particelle. Il risultato del rumore viene percepito come una fluttuazione nella densit\`{a} dell' immagine, che varia in maniera randomica \cite{diwakar_review_2018}. Questo tipo di rumore \`{e} anche chiamato \textbf{rumore quantico}.
 
-  \textbf{Rumore Elettrico:} Il processo di un circuito elettrico che riceve segnali analogici pu\`{o} generare un disturbo del segnale. La sorgente pi\`{u} comune di rumore \`{e} il rumore termico intrinseco di ogni elemento dissipativo (es. resistori) che si trovi ad una temperatura diversa dallo zero assoluto.
+  \textbf{Rumore Elettrico:} Il processo di un circuito elettrico che riceve segnali analogici pu\`{o} generare un disturbo del segnale. La sorgente pi\`{u} comune di rumore \`{e} il rumore termico intrinseco di ogni elemento dissipativo (es. resistori) che si trovi ad una temperatura diversa dallo zero assoluto \cite{boyat_review_2015}.
 
   \textbf{Errori di arrotondamento:} I segnali analogici sono convertiti in segnali digitali usando algoritmi di quantizzazione del segnale. Per ricostruire l'immagine il segnale ora discreto viene elaborato da un calcolatore. La rappresentazione in memoria del segnale deve essere necessariamente finita, essendo limitata dal numero di bit usati dal sistema numerico implementato dal computer per il calcolo. La computazione matematica non \`{e} dunque possibile senza errori di arrotondamento.
 
-  Generalmente quindi il rumore nella ricostruzione di immagini mediche viene introdotto per due motivi. Il primo \'{e} un rumore variabile dovuto al rumore elettrico e dagli errori di arrotondamento e pu\`{o} essere modellato con un semplice rumore additivo. Il secondo \`{e} il rumore dovuto dalle fluttuazioni di fotoni percepiti nelle diverse zone del recettore, pi\`{u} complesso da modellizzare.
-  Il rumore pu\`{o} essere calcolato statisticamente utilizzando la deviazione standard dell'intensit\`{a} dei pixel in una regione fisica unifome dell' immagine. L'analisi statistica dei valori dei pixel produce una distribuzione con forma a campana. La variazione standard, cio\`{e} la misura della variazione dei pixel nella zona di interesse, rappresenta il livello di rumore nell'immagine. Un valore alto della deviazione standard implica un alto livello di rumore. Questa distribuzione statistica mostra mostra che il valore medio del rumore è uguale alla varianza del rumore e pu\`{o} essere analizzato che il rapporto segnale-rumore \`{e} proporzionale alla radice quadrata della dose di raggi emessi. Dunque la quantit'\`{a} relatica di rumore quantico percepita dei recettori diminuisce all'aumentare della dose di raggi emessi.
+  Generalmente il rumore nella ricostruzione di immagini mediche viene introdotto per due motivi. Il primo \'{e} un rumore variabile dovuto al rumore elettrico e da errori di arrotondamento e pu\`{o} essere modellato con un semplice rumore additivo. Il secondo \`{e} il rumore dovuto dalle fluttuazioni di fotoni percepiti nelle diverse zone del recettore, pi\`{u} complesso da modellizzare.\\
+  Il rumore pu\`{o} essere calcolato statisticamente utilizzando la deviazione standard dell'intensit\`{a} dei pixel in una regione fisica unifome dell' immagine. L'analisi statistica dei valori dei pixel produce una distribuzione con forma a campana. La variazione standard, cio\`{e} la misura della variazione dei pixel nella zona di interesse, rappresenta il livello di rumore nell'immagine. Un valore alto della deviazione standard implica un alto livello di rumore. Questa distribuzione statistica mostra mostra che il valore medio del rumore \`{e} uguale alla varianza del rumore e pu\`{o} essere analizzato che il rapporto segnale-rumore \`{e} proporzionale alla radice quadrata della dose di raggi emessi. Dunque la quantit'\`{a} relativa di rumore quantico percepita dai recettori diminuisce all'aumentare della dose di raggi emessi.
   Il problema di identficare la distribuzione esatta del rumore deriva dal fatto che tutti i passi intermedi nella generazione dell'immagine introducono una correlazione statistica con i valori contenenti rumore catturati dal recettore. A causa di queste dipendenze la distribuzione esatta del rumore nell' immagine finale risulta sconosciuta.\\
-  Sperimentalmente si \`{e} potuto osservare come il rumore quantico sia modellizzabile con una distribuzione di Poisson mentre il rumore termico con una distribuzione di Gauss.
+  Sperimentalmente si \`{e} potuto osservare come il rumore quantico sia modellizzabile con una distribuzione di Poisson mentre il rumore termico con una distribuzione di Gauss \cite{manson_image_nodate, boyat_review_2015, diwakar_review_2018}.
 
 \section{Denoising}
   \subsection{Approccio Classico}
 
     Con image denoising si intente il problema di rimuovere rumori e distorsioni da una immagine. Generalmente si considera l'immagine rumorosa come una somma tra l'immagine originale e una componente di rumore, questo comporta che l'obbiettivo delle tecniche di denoising sia quello di ridurre la componente rumorosa cercando di mantenere nell'immagine pulita le caratteristiche dell' immagine originale.\\
-    Quando si tratta di denoising applicato a imaging medico l'obbiettivo del denoising \`{e} quello di ridurre il rumore mantendendo i dettagli clinici dell' immagine in modo tale da mantenere l'immagine utile per una corretta diagnosi. Nel tempo sono stati sviluppati filtri di lisciamento (smoothing) e di sharpening. I primi in caso di alti livelli di rumore tendono a sfocare l'immagine e a non preservare i bordi dell'oggetto, mentre i filtri di sharpening non eccellono nel mantenere piccoli dettagli dell' immagine. In caso di denoising per analisi di immagini mediche questo presenta un grande problema in quando mantenere pi\`{u} dettagli possibili dell'immagine originale \`{e} di fondamentale importanza. \\
+    Quando si tratta di denoising applicato a imaging medico l'obbiettivo del denoising \`{e} quello di ridurre il rumore mantendendo i dettagli clinici in modo tale da mantenere l'immagine utile per una corretta diagnosi. Nel tempo sono stati sviluppati filtri di lisciamento (smoothing) e di sharpening. I primi in caso di alti livelli di rumore tendono a sfocare l'immagine e a non preservare i bordi dell'oggetto, mentre i filtri di sharpening non eccellono nel mantenere piccoli dettagli dell' immagine \cite{fan_brief_2019}. In caso di denoising per analisi di immagini mediche questo presenta un grande problema in quando mantenere pi\`{u} dettagli possibili dell'immagine originale \`{e} di fondamentale importanza. \\
     I problemi principali nel denoising di immagini mediche sono:
     \begin{itemize}
       \item Le regioni piatte (zone aventi una variazione minima dei valori dei pixel) dell'immagine devono rimanere zone piatte.
@@ -177,7 +175,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       \item Il contrasto dell'immagine deve essere preservato.
       \item Non devono formarsi nuovo artefatti.
     \end{itemize}
-    Generalmente ci sono due approcci per il denoising di immagini : spatial domain filtering e transform domain filtering [A survey of edge preserving image denoising].
+    Generalmente ci sono due approcci per il denoising di immagini : spatial domain filtering e transform domain filtering \cite{jain_survey_2016}.
 
     \subsubsection{Filtri Spaziali}
 
@@ -195,19 +193,18 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
 
   \subsection{Deep Learning}
     I metodi di \textbf{Machine Learning} si dividono in supervisionati, semi-supervisionati e non supervisionati. I metodi supervisionati utilizzano delle informazioni associate all' input (labels) per imparare dei parametri e trainare il modello di denoising. Per esempio dato il seguente modello \begin{equation*} y = x + \mu \end{equation*} dove x, y e $\mu$ rappresentano rispettivamente l' immagine originale, l' immagine rumorosa e un rumore additivo Gaussiano (AWGN) con deviazione standard $\sigma$. Il modello di denoising utilizza le coppie $ \{x_k, y_k\}^N_{k=1}$ per imparare i parametri della funzione $f$ che cerca di rimuovere il rumore, dove $x_k$ e $y_k$ sono la k-esima immagine originale e la k-esima immagine con rumore; N \'{e} il numero di immagini totali. Il processo pu\`{o} essere descritto come \begin{equation*} x_k = f(y_k, \theta, m)\end{equation*} dove $\theta$ sono i parametri e m la quantit\`{a} di rumore. \\
-    I metodi non supervisionati invece utilizzano gli esempi di training per cercare patterns nel data, invece di fare label matching come nel caso supervisionato. Nel caso dei metodi semi-supervisionati invece si cerca di imparare una distribuzione del data in modo da poter assegnare labels ai dati che non ne hanno.\\
+    I metodi non supervisionati utilizzano gli esempi di training per cercare patterns nel data al posto di fare label matching come nel caso supervisionato. Nel caso dei metodi semi-supervisionati invece si cerca di imparare una distribuzione del data in modo da poter assegnare labels ai dati che non ne hanno.\\
     Le \textbf{Reti Neurali} sono alla base dei metodi di machine learning, che a loro volta sono alla base dei metodi di deep learning. La maggior parte delle reti neurali sono composte da neuroni, input $X$, funzioni di attivazione $\phi$, pesi $W = [W^0, W^1,...,W^{n-1}]$ e bias $b = [b^0, b^1, b^n-1]$. A differenza dei modelli lineari come la regressione lineare e la regressione logistica, che possono modellizzare solo funzioni lineari senza comprendere l'interazioni tra due qualsiasi variabili di input, le reti neurali non applicano un modello lineare direttamente ad \textbf{x}. Viene utilizzata invece una trasformazione $\phi(\boldsymbol{x})$, dove $\phi$ \`{e} una trasformazione non lineare.
 
     \begin{equation}
-        y = f(\boldsymbol{X}; \boldsymbol{b}, \boldsymbol{W}) = \phi(\boldsymbol{W}^T\boldsymbol{X} + \boldsymbol{b}).
+        y = f(\boldsymbol{X}; \boldsymbol{b}, \boldsymbol{W}) = \phi(\boldsymbol{W}^T\boldsymbol{X} + \boldsymbol{b})
     \end{equation}
 
     Se la rete neurale \`{e} composta da pi\`{u} "livelli" di profondit\`{a}, dati da funzioni di attivazione e pesi diversi, la rete viene definita con il termine \textbf{multilayer perceptrons} (MLPs) oppure \textbf{Deep feedforward networks} o \textbf{feedforward neural networks}. \\
-    L' obbiettivo delle reti feedforward \`{e} quello di approssimare una funzione $f^*$. Per esempio nel caso di un classificatore , $y = f^*(\textbf{x})$ mappa un input \textbf{x} ad una categoria $y$. Una rete feedforward definisce un mapping $\boldsymbol{y}=f(\boldsymbol{x} ; \boldsymbol{\theta})$ ed impara il valore dei parametri $\boldsymbol{\theta}$ che permettono a $f$ di meglio approssimare $f^*$.\\
-    Queste reti sono chiamate \textbf{feedforward} perch\`{e} le informazioni fluiscono dall' input \textbf{x}, attraverso le funzioni intermedie che compongono $f$, per arrivare all' output \textbf{y}. Non ci sono connessione \textbf{feedback} nelle quali l'output del modelo viene restituito al modello stesso.\\
-    Le feedforward neural networks vengono chiamate \textbf{networks} perch\`{e} tipicamente sono rappresentate dalla composizione funzioni diverse. Per esempio potremmo avere tre funzioni $f^{1}, f^{2}, f^{3}$ composte tra di loro per formare $f(\boldsymbol{x}) = f^{3}(f^{2}(f^{1}(\boldsymbol{x}))))$. In questo caso, $f^{1}$ \`{e} chiamato il primo layer, $f^{2}$ il secondo layer e cosi via. La lunghezza della catena definisce la \textbf{depth} del modello, da questa terminologia deriva il termine "deep learning". L'ultimo layer della rete neurale viene detto \textbf{output layer}. Durante il training della rete neurale , l' obbiettivo \`{e} quello di far assomigliare $f( \boldsymbol{x} )$ a $f^*(\boldsymbol{x})$. Il data di training \`{e} composto da dei punti \textbf{x}, ognuno associato ad una label $y \approx f^*(x)$. Il data di training specifica quale deve essere il comportamento dell' output layer per ogni punto \textbf{x}, cio\`{e} produrre valori vicini a y. L' algoritmo di training deve decidere come variare i parametri degli altri layer in modo tale da ottenere la migliore approssimazione di $f^*$, per fare questo viene utilizzata una \textbf{loss function} che descrive quanto il valore in output della rete su input $x$ sia "distante" secondo una qualche metrica dalla label associata. Siccome l'output dei layer intermedi non mostrano l'output desiderato, questo layer vengono chiamati \textbf{hidden layers}.
+    L' obbiettivo delle reti feedforward \`{e} quello di approssimare una funzione $f^*$. Per esempio nel caso di un classificatore , $y = f^*(\textbf{x})$ mappa un input \textbf{x} ad una categoria $y$. Una rete feedforward definisce un mapping $\boldsymbol{y}=f(\boldsymbol{x} ; \boldsymbol{\theta})$ ed impara il valore dei parametri $\boldsymbol{\theta}$ che permettono a $f$ di meglio approssimare $f^*$. Queste reti sono chiamate \textbf{feedforward} perch\`{e} le informazioni fluiscono dall' input \textbf{x}, attraverso le funzioni intermedie che compongono $f$, per arrivare all' output \textbf{y}. Non ci sono connessioni \textbf{feedback} nelle quali l'output del modelo viene restituito al modello stesso.\\
+    Le feedforward neural networks vengono chiamate \textbf{networks} perch\`{e} tipicamente sono rappresentate dalla composizione di funzioni diverse. Per esempio potremmo avere tre funzioni $f^{1}, f^{2}, f^{3}$ composte tra di loro per formare $f(\boldsymbol{x}) = f^{3}(f^{2}(f^{1}(\boldsymbol{x}))))$. In questo caso, $f^{1}$ \`{e} chiamato il primo layer, $f^{2}$ il secondo layer e cosi via. La lunghezza della catena definisce la \textbf{depth} del modello, da questa terminologia deriva il termine "deep learning". L'ultimo layer della rete neurale viene detto \textbf{output layer}. Durante il training della rete neurale , l' obbiettivo \`{e} quello di far assomigliare $f( \boldsymbol{x} )$ a $f^*(\boldsymbol{x})$. Il data di training \`{e} composto da dei punti \textbf{x}, ognuno associato ad una label $y \approx f^*(x)$. Il data di training specifica quale deve essere il comportamento dell' output layer per ogni punto \textbf{x}, cio\`{e} produrre valori vicini a y. L' algoritmo di training deve decidere come variare i parametri degli altri layer in modo tale da ottenere la migliore approssimazione di $f^*$, per fare questo viene utilizzata una \textbf{loss function} che descrive quanto il valore in output della rete su input $x$ sia "distante" secondo una qualche metrica dalla label associata. Siccome l'output dei layer intermedi non mostrano l'output desiderato, questi layers vengono chiamati \textbf{hidden layers}.
 
-    In fine questo tipo di reti vengono definite \textit{neurali} perch\`{e} sono ispirate alle neuroscienze. Ogni hidden layer della rete prende tipicamente in input un vettore di valori. La grandezza di questo vettore determina la \textbf{width} della rete. Ogni elemento di questo vettore pu\`{o} essere interpretato come un segnale per un neurone. Invece di pensare ad un hidden layer come una funzione che mappa un vettore in un altro, possiamo considerare ogni layer come composti da un insieme di \textbf{units} che operano in parallelo. Ogni unit ricorda un neurone, nel senso che riceve degli input da molte altre unit e computa la propria funzione di attivazione. Nonostante questa intuizione non bisogna pensare alle reti neurali come modellizzazioni del cervello, ma piuttosto come macchine che approssimano funzioni in modo tale da raggiungere una generalizzazione statistica del problema dato un insieme di esempi.
+    In fine questo tipo di reti vengono definite \textit{neurali} perch\`{e} sono ispirate alle neuroscienze. Ogni hidden layer della rete prende tipicamente in input un vettore di valori. La grandezza di questo vettore determina la \textbf{width} della rete. Ogni elemento di questo vettore pu\`{o} essere interpretato come un segnale per un neurone. Invece di pensare ad un hidden layer come una funzione che mappa un vettore in un altro, possiamo considerare ogni layer come composti da un insieme di \textbf{units} che operano in parallelo. Ogni unit assomiglia ad un neurone, nel senso che riceve degli input da molte altre unit e computa la propria funzione di attivazione. Nonostante questa intuizione, non bisogna pensare alle reti neurali come modellizzazioni del cervello, ma piuttosto come macchine che approssimano funzioni in modo tale da raggiungere una generalizzazione statistica del problema dato un insieme di esempi.
 
     Una rete neurale pu\`{o} essere espressa nel seguente modo :
     \begin{equation}
@@ -231,9 +228,9 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       o(h1) = f(z_{h1})
     \end{equation}
 
-    Una volta calcolato l'output $o_1$ la rete usa un algoritmo di back propagation e una funzione di loss per imparare i parametri [back propagation citation]. Nell' ambito dell' elaborazioni delle immagini una tipologia di rete neurale molto utilizzata \`{e} la \textbf{Convolutional Neural Network} (CNN).\\
-    Le Convolutional Network sono delle reti neurali specializzate per processare del data con una topologia a griglia. Esempi includono serie temporali, che possono essere rappresentate come una griglia 1D prendendo osservazioni ad intervalli regolari, e immagini, rappresentabili come una griglia 2D di pixel. Il nome "convolutional network" indica che la rete utilizza una particolare operazione matematica lineare denominata \textbf{convoluzione}. Utilizziamo un esempio per spiegare l'operazione di convoluzione : supponiamo di voler tracciare la posizione di un astronave con un sensore laser. Il sensore restituisce un singolo output $x(t)$, la posizione dell' astronave al tempo t. sia $x$ che $t$ sono  valori reali.
-    Supponiamo che il sensore restituisca output rumorosi. Per ottenere una stima meno rumorosa della posizione della posizione dell' astronave vogliamo utilizzare una media pesata tra le misurazioni dando pi\`{u} importanza alle misurazioni recenti. Possiamo utilizzare una funzione di pesatura $w(\alpha)$, dove $\alpha$ \`{e} il tempo della misurazione. Applicando questa media pesata ad ogni istante, si ottiene una nuova funzione $s$ che indica una stima regolarizzata della posizione.
+    Una volta calcolato l'output $o_1$ la rete usa un algoritmo di back propagation e una funzione di loss per imparare i parametri \cite{Goodfellow-et-al-2016}. Nell' ambito dell' elaborazioni delle immagini una tipologia di rete neurale molto utilizzata \`{e} la \textbf{Convolutional Neural Network} (CNN).\\
+    Le Convolutional Network sono delle reti neurali specializzate per processare del data con una topologia a griglia. Un esempio sono le serie temporali, che possono essere rappresentate come una griglia 1D prendendo osservazioni ad intervalli regolari, e immagini, rappresentabili come una griglia 2D di pixel. Il nome "convolutional network" indica che la rete utilizza una particolare operazione matematica lineare denominata \textbf{convoluzione}. Utilizziamo un esempio per spiegare l'operazione di convoluzione : supponiamo di voler tracciare la posizione di un astronave con un sensore laser. Il sensore restituisce un singolo output $x(t)$, la posizione dell' astronave al tempo t. Sia $x$ che $t$ sono  valori reali.
+    Supponiamo che il sensore restituisca output rumorosi. Per ottenere una stima meno rumorosa della posizione dell' astronave vogliamo utilizzare una media pesata tra le misurazioni dando pi\`{u} importanza alle misurazioni recenti. Possiamo utilizzare una funzione di pesatura $w(\alpha)$ dove $\alpha$ \`{e} il tempo della misurazione. Applicando questa media pesata ad ogni istante si ottiene una nuova funzione $s$ che indica una stima regolarizzata della posizione.
     \begin{equation}
       s(t)=\int x(a) w(t-a) d a
       \label{eq:1}
@@ -242,9 +239,9 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \begin{equation*}
       s(t)=(x * w)(t)
     \end{equation*}
-    Nel nostro esempio, $w$ deve essere una funzione di densit\`{a} valida, altrimenti l'output non sarebbe una media pesata. Ma questo non \`{e} necessario per altri esempi, in generale la convoluzione \`{e} devinita per ogni coppia di funzioni dove l'integrale \ref{eq:1} \`{e} definito, e l'operazione pu\`{o} essere usata per altri scopi oltre alla media pesata.
-    Nella terminologia delle convoluzioni il primo termine, in questo caso la funzione $x$ prende il nome di \textbf{input}, il secondo argomento viene detto \textbf{kernel}. L'output viene indicato con il termine \textbf{feature map}.
-    Nelle applicazioni di machine learning, l'input \`{e} solitamente discretizzato e rappresentato da un array multidimensionale, e il kernel \`{e} rappresentato da un array multidimensionale di parametri adattati dall' algoritmo di apprendimento. Nel caso di immagini vogliamo definire la convoluzione su pi\`{u} assi. Per esempio con un immagine due-dimensionale $I$ come input, vogliamo utilizzare un kernel due-dimensionale $K$ :
+    Nel nostro esempio, $w$ deve essere una funzione di densit\`{a} valida, altrimenti l'output non sarebbe una media pesata. Ma questo non \`{e} necessario per altri esempi, in generale la convoluzione \`{e} devinita per ogni coppia di funzioni dove l'integrale \ref{eq:1} \`{e} definito; e l'operazione pu\`{o} essere usata per altri scopi oltre alla media pesata.
+    Nella terminologia delle convoluzioni il primo termine, in questo caso la funzione $x$, prende il nome di \textbf{input}. Il secondo argomento viene detto \textbf{kernel}. L'output viene indicato con il termine \textbf{feature map}.
+    Nelle applicazioni di machine learning l'input \`{e} solitamente discretizzato e rappresentato da un array multidimensionale, e il kernel \`{e} rappresentato da un array multidimensionale di parametri adattati dall' algoritmo di apprendimento. Nel caso di immagini vogliamo definire la convoluzione su pi\`{u} assi. Per esempio con un immagine due-dimensionale $I$ come input, vogliamo utilizzare un kernel due-dimensionale $K$ :
     \begin{equation*}
       S(i, j)=(I * K)(i, j)=\sum_{m} \sum_{n} I(m, n) K(i-m, j-n)
     \end{equation*}
@@ -257,8 +254,8 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       \end{center}
     \end{figure}
 
-    Le CNNs per come sono definite sono in grado di sfruttare le correlazioni spaziali dell' immagine [inserire citazione a deeplearning su proprieta cnns], preservando bordi e dettagli.\\
-    Un avanzamento importante alle CNNs \`{e} stato dato dalla funzione di attivazione ReLU [Rectified Linear Unit citation vedi deeplearning book], migliorando la velocit\`{a} della discesa del gradiente stocastica (SGD) [citazione a deeplearning], un metodo molto utilizzato per il training dei parametri del kernel. Sperimentalmente \`{e} stato osservato che se la rete \`{e} molto profonda, durante il training si possono presentare fenomini di annullameto o esplosione del gradiente; e se la rete \`{e} molto ampia, si pu\`{o} presentare il fenomeno dell' overfitting [citazione a deep learning su overfitting]. Per risolvere questi problemi nel 2016 \`{e} stato proposto un particolare tipo di rete, ResNet [citazione a resnet]. ResNet introduce il concetto di \textit{skip connection}: l'input di un layer \`{e} aggiunto all'output di un layer successivo. L' obbiettivo di una rete neurale \`{e} quello di modellizzare una funzione target $h(\textbf{x})$. Aggiungendo l' input \textbf{x} all' output della rete, allora la rete \`{e} costretta ad imparare una funzione $f(\textbf{x}) = h(\textbf{x}) - \textbf{x}$. Questa tecnica prende il nome di \textit{residual learning}.  Figura \ref{fig:seconda}.
+    Le CNNs per come sono definite sono in grado di sfruttare le correlazioni spaziali dell' immagine \cite{Goodfellow-et-al-2016, tian_deep_2020, gondara_medical_2016}, preservando bordi e dettagli.\\
+    Un avanzamento importante alle CNNs \`{e} stato dato dalla funzione di attivazione ReLU \cite{xu_empirical_2015, tian_deep_2020}, migliorando la velocit\`{a} della discesa stocastica del gradiente (SGD) \cite{Goodfellow-et-al-2016}, un metodo molto utilizzato per il training dei parametri del kernel. Sperimentalmente \`{e} stato osservato che se la rete \`{e} molto profonda, durante il training si possono presentare fenomini di annullameto o esplosione del gradiente; e se la rete \`{e} molto ampia, si pu\`{o} presentare il fenomeno dell' overfitting \cite{Goodfellow-et-al-2016}. Per risolvere questi problemi nel 2016 \`{e} stato proposto un particolare tipo di rete, ResNet \cite{he_deep_2015}. ResNet introduce il concetto di \textit{skip connection}: l'input di un layer \`{e} aggiunto all'output di un layer successivo. L' obbiettivo di una rete neurale \`{e} quello di modellizzare una funzione target $h(\textbf{x})$. Aggiungendo l' input \textbf{x} all' output della rete, allora la rete \`{e} costretta ad imparare una funzione $f(\textbf{x}) = h(\textbf{x}) - \textbf{x}$. Questa tecnica prende il nome di \textit{residual learning}.  Figura \ref{fig:seconda}.
 
     \begin{figure}
       \begin{center}
@@ -281,42 +278,9 @@ CONCLUSIONI}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce Conclusioni
                                         %   nell'indice
 \addcontentsline{toc}{chapter}{Conclusioni} Queste sono le
-conclusioni.\\
-In queste conclusioni voglio fare un riferimento alla
-bibliografia: questo \`e il mio riferimento \cite{K3,K4}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
-\renewcommand{\chaptermark}[1]{\markright{\thechapter \ #1}{}}
-\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}}
-\appendix                               %imposta le appendici
-\chapter{Prima Appendice}               %crea l'appendice
-In questa Appendice non si \`e utilizzato il comando:\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\verb"" � equivalente all'
-                                        %   ambiente verbatim,
-                                        %   ma si utilizza all'interno
-                                        %   di un discorso.
-\verb"\clearpage{\pagestyle{empty}\cleardoublepage}", ed infatti
-l'ultima pagina 8 ha l'intestazione con il numero di pagina in
-alto.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
-\rhead[\fancyplain{}{\bfseries \thechapter \:Prima Appendice}]
-{\fancyplain{}{\bfseries\thepage}}
-\chapter{Seconda Appendice}             %crea l'appendice
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
-\rhead[\fancyplain{}{\bfseries \thechapter \:Seconda Appendice}]
-{\fancyplain{}{\bfseries\thepage}}
-\begin{thebibliography}{90}             %crea l'ambiente bibliografia
-\rhead[\fancyplain{}{\bfseries \leftmark}]{\fancyplain{}{\bfseries
-\thepage}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce Bibliografia
-                                        %   nell'indice
-\addcontentsline{toc}{chapter}{Bibliografia}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%provare anche questo comando:
-%%%%%%%%%%%\addcontentsline{toc}{chapter}{\numberline{}{Bibliografia}}
-\bibitem{K1} Primo oggetto bibliografia.
-\bibitem{K2} Secondo oggetto bibliografia.
-\bibitem{K3} Terzo oggetto bibliografia.
-\bibitem{K4} Quarto oggetto bibliografia.
-\end{thebibliography}
+conclusioni.ssssssss
+
+\printbibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter*{Ringraziamenti}
