@@ -4,7 +4,7 @@
                                         %twoside: serve per fare un
                                         %   documento fronteretro
                                         %report: stile tesi (oppure book)
-\documentclass[12pt,a4paper,openright,twoside]{report}
+\documentclass[12pt,a4paper,openright,oneside]{report}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per scrivere in italiano
 \usepackage[italian]{babel}
@@ -266,6 +266,30 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \end{figure}
 
     Quando si inizializza una rete neurale i suoi pesi sono vicini a zero e la rete restituisce in output valori vicini a zero. Aggiungendo una skip connection, la rete restituir\`{a} in output una copia del suo input; modellando inizialmente la funzione identit\`{a}. Se la funzione target \`{e} abbastanza vicina alla funzione di identit\`{a} (particolarmente vero per il problema del denoising), il residual learning velocizza l' apprendimento dei parametri in maniera considerevole.
+
+\chapter{DN-Resnet}
+  \section{Modellizzazione del Rumore}
+    Lo scopo delle tecniche di denoising \`{e} quello di generare una immagine pulita X dato un input rumoroso Y, ottenuto secondo un modello di degradazione $Y = D(X)$.
+    Per il rumore Gaussiano additivo (AWGN), il valore del pixel i-esimo  \`{e} :
+    \begin{equation}
+        y_{i}=D\left(x_{i}\right)=x_{i}+n_{i}
+    \end{equation}
+    Dove $n_{i} \sim \mathcal{N}\left(0, \sigma^{2}\right)$ \`{e} un rumore Gaussiano i.i.d con media zero e varianza $\sigma^{2}$.
+    AWGN \`{e} usato per modellare rumore termico indipendente dal segnale elaborato e altri errori introdotti dall' elaborazione dell' immagine come descritto in precedenza.
+    La degradazione dell'immagine dovuta al cosidetto rumore quantico viene invece modellata usando un rumore di Poisson dipendente dal segnale :
+
+    \begin{equation}
+      y_{i}=D\left(x_{i}\right)=p_{i}, \quad p_{i} \sim \mathcal{P}\left(x_{i}\right)
+    \end{equation}
+
+    dove $\mathcal{P}\left(x_{i}\right)$ \`{e} una variablie aleatoria di Poisson con media $x_i$. Siccome la distribuzione di Poisson tende alla distribuzion di Gauss per valori abbastanza grandi di $\lambda$ , $\mathcal{P}(\lambda) \approx \mathcal{N}(\lambda, \lambda)$ , il rumore generato in sistemi che catturano immagini \`{e} meglio modellato come un rumore di Poisson con AWGN, chiamato \textbf{Poisson-Gaussian} :
+
+    \begin{equation}
+      y_{i}=D\left(x_{i}\right)=\alpha p_{i}+n_{i}, \quad \alpha>0
+    \end{equation}
+    che \`{e} stato verificato da risultati sperimentali \cite{foi_practical_2008}.
+    
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%per fare le conclusioni

@@ -1943,6 +1943,7 @@
     <bcf:citekey order="12">Goodfellow-et-al-2016</bcf:citekey>
     <bcf:citekey order="13">Goodfellow-et-al-2016</bcf:citekey>
     <bcf:citekey order="14">he_deep_2015</bcf:citekey>
+    <bcf:citekey order="15">foi_practical_2008</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

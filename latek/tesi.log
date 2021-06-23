@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.12)  19 JUN 2021 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.12)  23 JUN 2021 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -467,12 +467,8 @@ Package biblatex Info: Reference section=0 on input line 66.
 Package biblatex Info: Reference segment=0 on input line 66.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
 
-
-] [1
-
-] [2
 
 
 ] (/home/notchla/Documents/Tesi/latek/tesi.toc
@@ -491,35 +487,31 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `tesi.toc'.
 
- [3
+ [2
 
-] [4
 
 
 ] (/home/notchla/Documents/Tesi/latek/tesi.lof)
 \tf@lof=\write6
 \openout6 = `tesi.lof'.
 
- [5
+ [3
 
-] [6
 
 
 ] (/home/notchla/Documents/Tesi/latek/tesi.lot)
 \tf@lot=\write7
 \openout7 = `tesi.lot'.
 
- [7
+ [4
 
-] [8
 
 
 ]
 Capitolo 1.
+[1
 
-Underfull \vbox (badness 1424) has occurred while \output is active []
 
- [1
 
 ]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 128.
@@ -535,48 +527,45 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] [3]
-Underfull \vbox (badness 2478) has occurred while \output is active []
-
- [4] [5] [6] [7]
+[2] [3] [4] [5] [6] [7]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 198.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 198.
- [8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
-<../images/mlp.png, id=73, 714.67pt x 865.2325pt>
+ [8] [9]
+<../images/mlp.png, id=57, 714.67pt x 865.2325pt>
 File: ../images/mlp.png Graphic file (type png)
 <use ../images/mlp.png>
 Package pdftex.def Info: ../images/mlp.png  used on input line 217.
 (pdftex.def)             Requested size: 214.40265pt x 259.57175pt.
  [10 <../images/mlp.png>] [11]
-<../images/convolution.png, id=83, 949.5475pt x 826.08624pt>
+<../images/convolution.png, id=67, 949.5475pt x 826.08624pt>
 File: ../images/convolution.png Graphic file (type png)
 <use ../images/convolution.png>
 Package pdftex.def Info: ../images/convolution.png  used on input line 252.
 (pdftex.def)             Requested size: 284.86644pt x 247.82777pt.
  [12 <../images/convolution.png>]
-<../images/resnet.png, id=88, 383.4325pt x 697.60625pt>
+<../images/resnet.png, id=72, 383.4325pt x 697.60625pt>
 File: ../images/resnet.png Graphic file (type png)
 <use ../images/resnet.png>
 Package pdftex.def Info: ../images/resnet.png  used on input line 263.
 (pdftex.def)             Requested size: 115.03062pt x 209.28348pt.
- [13 <../images/resnet.png>] [14
+ [13 <../images/resnet.png>]
+Capitolo 2.
+[14
+
+] [15] [16
 
 
-] [15
-
-] [16
 
 ]
-Overfull \hbox (4.68782pt too wide) in paragraph at lines 286--286
+Overfull \hbox (4.68782pt too wide) in paragraph at lines 309--309
 \OT1/cmr/m/it/12 ce on Da-ta Mi-ning Work-shops (ICDMW) \OT1/cmr/m/n/12 (dic. 2016). ar-Xiv: 1608.04667,
  []
 
-[17] [18] [19
+[17
+
+] [18] [19
 
 
 
@@ -586,18 +575,18 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9885 strings out of 494912
- 166132 string characters out of 6180266
- 563003 words of memory out of 5000000
- 13037 multiletter control sequences out of 15000+600000
+ 9904 strings out of 494912
+ 166694 string characters out of 6180266
+ 563045 words of memory out of 5000000
+ 13056 multiletter control sequences out of 15000+600000
  14760 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 45i,11n,45p,1473b,1270s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,11n,45p,1473b,1256s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on /home/notchla/Documents/Tesi/latek/tesi.pdf (29 pages, 289045 bytes).
+Output written on /home/notchla/Documents/Tesi/latek/tesi.pdf (24 pages, 293075 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 136 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

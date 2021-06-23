@@ -187,6 +187,58 @@
       \verb https://vciba.springeropen.com/articles/10.1186/s42492-019-0016-7
       \endverb
     \endentry
+    \entry{foi_practical_2008}{article}{}
+      \name{author}{4}{}{%
+        {{hash=8106dfb2385f0623519697e61e755100}{%
+           family={Foi},
+           familyi={F\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8bcede5896548e7c076ec4d3dddd1282}{%
+           family={Trimeche},
+           familyi={T\bibinitperiod},
+           given={Mejdi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8bbc6b8ed6f81644d03f17d186776545}{%
+           family={Katkovnik},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=72943da991b92fae8d3fcb28a3080793}{%
+           family={Egiazarian},
+           familyi={E\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{877e75d426413977bea20a00d4048eee}
+      \strng{fullhash}{a6f95a3cdc40f8e6ea4924598a9e59d1}
+      \strng{bibnamehash}{877e75d426413977bea20a00d4048eee}
+      \strng{authorbibnamehash}{877e75d426413977bea20a00d4048eee}
+      \strng{authornamehash}{877e75d426413977bea20a00d4048eee}
+      \strng{authorfullhash}{a6f95a3cdc40f8e6ea4924598a9e59d1}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a simple and usable noise model for the raw-data of digital imaging sensors. This signal-dependent noise model, which gives the pointwise standard-deviation of the noise as a function of the expectation of the pixel raw-data output, is composed of a Poissonian part, modeling the photon sensing, and Gaussian part, for the remaining stationary disturbances in the output data. We further explicitly take into account the clipping of the data (over- and under-exposure), faithfully reproducing the nonlinear response of the sensor. We propose an algorithm for the fully automatic estimation of the model parameters given a single noisy image. Experiments with synthetic images and with real raw-data from various sensors prove the practical applicability of the method and the accuracy of the proposed model.}
+      \field{issn}{1941-0042}
+      \field{journaltitle}{IEEE Transactions on Image Processing}
+      \field{month}{10}
+      \field{note}{Conference Name: IEEE Transactions on Image Processing}
+      \field{number}{10}
+      \field{title}{Practical {Poissonian}-{Gaussian} {Noise} {Modeling} and {Fitting} for {Single}-{Image} {Raw}-{Data}}
+      \field{volume}{17}
+      \field{year}{2008}
+      \field{pages}{1737\bibrangedash 1754}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1109/TIP.2008.2001399
+      \endverb
+      \verb{file}
+      \verb IEEE Xplore Full Text PDF:/home/notchla/Zotero/storage/6LHPK3UG/Foi et al. - 2008 - Practical Poissonian-Gaussian Noise Modeling and F.pdf:application/pdf;IEEE Xplore Abstract Record:/home/notchla/Zotero/storage/AMFI7WVU/4623175.html:text/html
+      \endverb
+      \keyw{Additive white noise,Clipping,Digital images,digital imaging sensors,Fitting,Gaussian noise,Hardware,Image sensors,noise estimation,noise modeling,Optoelectronic and photonic sensors,overexposure,Poisson noise,raw-data,Sensor phenomena and characterization,Signal processing,Thermal sensors}
+    \endentry
     \entry{gondara_medical_2016}{article}{}
       \name{author}{1}{}{%
         {{hash=75d25fafcd8baf3e07806a57728a62f8}{%
