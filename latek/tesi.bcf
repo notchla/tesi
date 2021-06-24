@@ -1944,6 +1944,10 @@
     <bcf:citekey order="13">Goodfellow-et-al-2016</bcf:citekey>
     <bcf:citekey order="14">he_deep_2015</bcf:citekey>
     <bcf:citekey order="15">foi_practical_2008</bcf:citekey>
+    <bcf:citekey order="16">he_deep_2015</bcf:citekey>
+    <bcf:citekey order="17">ioffe_batch_2015</bcf:citekey>
+    <bcf:citekey order="18">lim_enhanced_2017</bcf:citekey>
+    <bcf:citekey order="19">ren_ct-srcnn_2017</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

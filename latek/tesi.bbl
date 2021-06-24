@@ -375,6 +375,51 @@
       \endverb
       \keyw{Computer Science - Computer Vision and Pattern Recognition}
     \endentry
+    \entry{ioffe_batch_2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5543e82359e26b035efc009cb3efff9d}{%
+           family={Ioffe},
+           familyi={I\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ed568d9c3bb059e6bf22899fbf170f86}{%
+           family={Szegedy},
+           familyi={S\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e8dee717d54c2984b1c6bd3f3c0561f}
+      \strng{fullhash}{7e8dee717d54c2984b1c6bd3f3c0561f}
+      \strng{bibnamehash}{7e8dee717d54c2984b1c6bd3f3c0561f}
+      \strng{authorbibnamehash}{7e8dee717d54c2984b1c6bd3f3c0561f}
+      \strng{authornamehash}{7e8dee717d54c2984b1c6bd3f3c0561f}
+      \strng{authorfullhash}{7e8dee717d54c2984b1c6bd3f3c0561f}
+      \field{sortinit}{I}
+      \field{sortinithash}{320bc8fe8101b9376f9f21cd507de0e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization. It also acts as a regularizer, in some cases eliminating the need for Dropout. Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.9\% top-5 validation error (and 4.8\% test error), exceeding the accuracy of human raters.}
+      \field{journaltitle}{arXiv:1502.03167 [cs]}
+      \field{month}{3}
+      \field{note}{arXiv: 1502.03167}
+      \field{shorttitle}{Batch {Normalization}}
+      \field{title}{Batch {Normalization}: {Accelerating} {Deep} {Network} {Training} by {Reducing} {Internal} {Covariate} {Shift}}
+      \field{urlday}{23}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb arXiv Fulltext PDF:/home/notchla/Zotero/storage/6QHP292F/Ioffe and Szegedy - 2015 - Batch Normalization Accelerating Deep Network Tra.pdf:application/pdf;arXiv.org Snapshot:/home/notchla/Zotero/storage/H3U8B5RW/1502.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1502.03167
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1502.03167
+      \endverb
+      \keyw{Computer Science - Machine Learning}
+    \endentry
     \entry{jain_survey_2016}{article}{}
       \name{author}{2}{}{%
         {{hash=35a06f468dc50bf4f69e24e795b5e1ea}{%
@@ -427,6 +472,65 @@
       \verb{url}
       \verb https://doi.org/10.1007/s10796-014-9527-0
       \endverb
+    \endentry
+    \entry{lim_enhanced_2017}{article}{}
+      \name{author}{5}{}{%
+        {{hash=b084ebdeb6818fd9dbe5d87e44cabee0}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={Bee},
+           giveni={B\bibinitperiod}}}%
+        {{hash=c55e7aa1fc30130c5305084200967810}{%
+           family={Son},
+           familyi={S\bibinitperiod},
+           given={Sanghyun},
+           giveni={S\bibinitperiod}}}%
+        {{hash=33e1ad9613ce4052cef114c9db48c119}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Heewon},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5ca2934ebf4a7a67f874865367f03caf}{%
+           family={Nah},
+           familyi={N\bibinitperiod},
+           given={Seungjun},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2dda732b1ad02ac6a746101cdca5a20e}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Kyoung\bibnamedelima Mu},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b166152d9e6d8f2ecac19e2e5c8b6c8}
+      \strng{fullhash}{68a936b449077f2616fd51826e0b1037}
+      \strng{bibnamehash}{0b166152d9e6d8f2ecac19e2e5c8b6c8}
+      \strng{authorbibnamehash}{0b166152d9e6d8f2ecac19e2e5c8b6c8}
+      \strng{authornamehash}{0b166152d9e6d8f2ecac19e2e5c8b6c8}
+      \strng{authorfullhash}{68a936b449077f2616fd51826e0b1037}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent research on super-resolution has progressed with the development of deep convolutional neural networks (DCNN). In particular, residual learning techniques exhibit improved performance. In this paper, we develop an enhanced deep super-resolution network (EDSR) with performance exceeding those of current state-of-the-art SR methods. The significant performance improvement of our model is due to optimization by removing unnecessary modules in conventional residual networks. The performance is further improved by expanding the model size while we stabilize the training procedure. We also propose a new multi-scale deep super-resolution system (MDSR) and training method, which can reconstruct high-resolution images of different upscaling factors in a single model. The proposed methods show superior performance over the state-of-the-art methods on benchmark datasets and prove its excellence by winning the NTIRE2017 Super-Resolution Challenge.}
+      \field{journaltitle}{arXiv:1707.02921 [cs]}
+      \field{month}{7}
+      \field{note}{arXiv: 1707.02921}
+      \field{title}{Enhanced {Deep} {Residual} {Networks} for {Single} {Image} {Super}-{Resolution}}
+      \field{urlday}{23}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb arXiv Fulltext PDF:/home/notchla/Zotero/storage/XNW993Z4/Lim et al. - 2017 - Enhanced Deep Residual Networks for Single Image S.pdf:application/pdf;arXiv.org Snapshot:/home/notchla/Zotero/storage/YCZ4UVT3/1707.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1707.02921
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1707.02921
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition}
     \endentry
     \entry{manson_image_nodate}{article}{}
       \name{author}{6}{}{%
@@ -482,6 +586,56 @@
       \verb{file}
       \verb Manson et al. - Image Noise in Radiography and Tomography Causes,.pdf:/home/notchla/Zotero/storage/PYE8ICAU/Manson et al. - Image Noise in Radiography and Tomography Causes,.pdf:application/pdf
       \endverb
+    \endentry
+    \entry{ren_ct-srcnn_2017}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1f01fbc8b0dc3a7e0215d2a35cde33b8}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Haoyu},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6b6b6b99c02706a53b5b83ee0948d46f}{%
+           family={El-Khamy},
+           familyi={E\bibinithyphendelim K\bibinitperiod},
+           given={Mostafa},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4ed3205e7f4fa4288cc3b1d761ea26ed}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jungwon},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{fullhash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{bibnamehash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{authorbibnamehash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{authornamehash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{authorfullhash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We propose methodologies to train highly accurate and efficient deep convolutional neural networks (CNNs) for image super resolution (SR). A cascade training approach to deep learning is proposed to improve the accuracy of the neural networks while gradually increasing the number of network layers. Next, we explore how to improve the SR efficiency by making the network slimmer. Two methodologies, the one-shot trimming and the cascade trimming, are proposed. With the cascade trimming, the network's size is gradually reduced layer by layer, without significant loss on its discriminative ability. Experiments on benchmark image datasets show that our proposed SR network achieves the state-of-the-art super resolution accuracy, while being more than 4 times faster compared to existing deep super resolution networks.}
+      \field{journaltitle}{arXiv:1711.04048 [cs]}
+      \field{month}{11}
+      \field{note}{arXiv: 1711.04048}
+      \field{shorttitle}{{CT}-{SRCNN}}
+      \field{title}{{CT}-{SRCNN}: {Cascade} {Trained} and {Trimmed} {Deep} {Convolutional} {Neural} {Networks} for {Image} {Super} {Resolution}}
+      \field{urlday}{23}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb arXiv Fulltext PDF:/home/notchla/Zotero/storage/NFVBPWN6/Ren et al. - 2017 - CT-SRCNN Cascade Trained and Trimmed Deep Convolu.pdf:application/pdf;arXiv.org Snapshot:/home/notchla/Zotero/storage/4UICNLY7/1711.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1711.04048
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1711.04048
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition}
     \endentry
     \entry{tian_deep_2020}{article}{}
       \name{author}{6}{}{%

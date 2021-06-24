@@ -267,7 +267,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
 
     Quando si inizializza una rete neurale i suoi pesi sono vicini a zero e la rete restituisce in output valori vicini a zero. Aggiungendo una skip connection, la rete restituir\`{a} in output una copia del suo input; modellando inizialmente la funzione identit\`{a}. Se la funzione target \`{e} abbastanza vicina alla funzione di identit\`{a} (particolarmente vero per il problema del denoising), il residual learning velocizza l' apprendimento dei parametri in maniera considerevole.
 
-\chapter{DN-Resnet}
+\chapter{Denoising Residual Network}
   \section{Modellizzazione del Rumore}
     Lo scopo delle tecniche di denoising \`{e} quello di generare una immagine pulita X dato un input rumoroso Y, ottenuto secondo un modello di degradazione $Y = D(X)$.
     Per il rumore Gaussiano additivo (AWGN), il valore del pixel i-esimo  \`{e} :
@@ -288,7 +288,60 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       y_{i}=D\left(x_{i}\right)=\alpha p_{i}+n_{i}, \quad \alpha>0
     \end{equation}
     che \`{e} stato verificato da risultati sperimentali \cite{foi_practical_2008}.
-    
+
+  \section{DN-Resnet}
+    DN-Resnet consiste in una rete neurale composti da blocchi residui (ResBlocks), inseriti gradualmente nella rete durante il training. Questa strategia di training permette alla rete di convergere pi\`{u} velocemente. In aggiunta al convenzionale \textbf{errore quadratico medio} (MSE) si utilizza anche un funzione di loss \textbf{edge-aware} e una \textbf{perceptual loss} basata su Resnet-50 \cite{he_deep_2015}.\\
+    Aggiungendo in cascata 5 Resblocks la rete raggiunge performance da stato dell' arte su tutti e tre i tipi di rumore, Gaussian, Poisson e Poisson-Gaussian. Rispetto ad altre reti neurali proposte per il problema del denoising, DN-Resnet ha un tempo di training molto minore e pu\`{o} essere eseguita in tempo reale.
+
+    Dato un dataset di training $\left\{X_{i}, Y_{i}\right\}, i=1, \ldots, N$ con $N$ esempi, l'obbiettivo \`{e} quello di imparare un modello $S$ che predice immagini pulite $\hat{X}_{i}=S\left(Y_{i}\right)$ .\\
+    L' elemento base di DN-Resnet \`{e} un ResBlock semplificato, come mostrato in figura \ref{fig:resblocks}(a). A differenza del ResBlock standard sono stati rimossi i layer di batch normalization \cite{ioffe_batch_2015} e il layer di ReLU dopo la somma residua, perch\`{e} rimuovere questi layer nelle reti residue basate su feature-map non peggiora le performance della rete \cite{lim_enhanced_2017}.
+
+    \begin{figure}
+      \begin{center}
+        \includegraphics[scale=0.3]{resblocks.png}
+        \caption [ResBlocks in DN-Resnet]{(a) Standard ResBlock, (b) ResBlock in DN-Resnet}
+        \label{fig:resblocks}
+      \end{center}
+    \end{figure}
+
+    DN-Resnet viene costruita concatenando i ResBlock in figura \ref{fig:resblocks}(b). Per velocizzare il training, viene utilizzato il metodo del \textbf{cascade training} \cite{ren_ct-srcnn_2017}, che separa il training in stage trainati uno alla volta. Il training di DN-Resnet inizia come un modello di CNN a tre layer. Il primo layer consiste in $64$ $9\times9$ filtri. Il secondo layer consiste in $32$ $ 5\times5$. L'ultimo layer \`{e} composto da un layer $5 \times 5$. Tutte le convoluzioni hanno stride uno, e tutti i pesi sono inizializzati da una distribuzione Gaussiana con $\sigma = 0.001$. Dopo il training dei tre layer si procede con il cascade training come mostrato in figura \ref{fig:cascade}. Quando il training dello stage corrente \`{e} finito si passa allo stage successivo, rendendo pi\`{u} profonda la rete. In ogni stage viene aggiunto un ResBlock. Quindi la rete inizia con 3 layers, e si sviluppa in 5 layers, poi 7 layers, etc. Ogni layer convoluzionario nel ResBlock consiste in $32$ $3\times 3$ filtri, i nuovi layers vengono inseriti prima dell' ultimo layer $5 \times 5$. I pesi dei layers gia esistenti vengono ereditati dallo stage precedente, mentre i pesi del nuovo blocco vengono inizializzati randomicamente (Gaussian con $\sigma = 0.001$).
+    Aggiungendo 5 ResBlock, la DN-Resnet risultante avr\`{a} $5 \times 2 + 3 = 13$ layers convoluzionari.
+
+    \begin{figure}
+      \begin{center}
+        \includegraphics[scale=0.3]{cascadetraining.png}
+        \caption [Cascade Training]{Cascade training di DN-Resnet. I cerchi denotano i layer convoluzionari standard, mentri i quadrati i ResBlock.}
+        \label{fig:cascade}
+      \end{center}
+    \end{figure}
+
+  \section{Funzione di loss Edge-aware}
+  Molte reti di denoising puntano a minimizzare l' Errore Quadratico Medio (MSE) $\frac{1}{N} \sum_{i=1}^{N}\left\|X_{i}-\hat{X}_{i}\right\|^{2}$ sul data di training. In questa rete viene utilizzata una funzione di loss dove ai pixel che rappresentano dei bordi dell' oggetto vengono assegnati pesi piu grandi rispetto agli altri pixel.
+
+  \begin{equation}
+    \operatorname{edge-loss}=w \times \frac{1}{N} \sum_{i=1}^{N}\left\|X_{i} M_{i}-\hat{X}_{i} M_{i}\right\|^{2}
+    \label{eq:edge-aware}
+  \end{equation}
+  In Eq. \ref{eq:edge-aware}, $X_i$ \`{e} l' i-esima immagine pulita, $\hat{X}_{i}$ \`{e} i-esima immagine a cui \`{e} stato applicato il denoising, $M$ \`{e} una edge map, $N$ \`{e} il numero di immagini e $w$ \`{e} una costante per controllare il trade-off tra i pixel negli edge e nel resto dell' immagine.
+
+  Ci sono due vantaggi nell' applicare questa funzione di loss edge-aware. Il primo \`{e} che una delle sfide principali nel denoising consiste nella difficolta di riconoscere i bordi dell' oggetto, soprattuto in caso di rumore elevato, mentre aggiungere un vincolo nella funzione di loss risulta molto semplice. Il secondo \`{e} che dal punto di vista della qualit\`{a} dell' immagine, aumentare la precisione del denoising sui bordi dell' oggetto ne aumenta la definizione.
+
+  M pu\`{o} essere costruito in due modi, tramite la magnitudine del gradiente ottenuto dai filtri di sobel o tramite una maschera binaria ottenuta impostando una soglia di valore del pixel da superare. I risultati migliori si ottengono tramite i \textbf{filtri di sobel}.\\
+  L' operatore di sobel calcola un valore approssimato del valore in ogni punto del gradiente della funzione che rappresenta la luminosit\`{a} dell' immagine. L' operatore trova la direzione lungo il quale si ha il massimo incremento dal chiaro allo scuro, e la velocit\`{a} con cui avviene il cambiamento lungo questa direzione. Il risultato finale fornisce una misura di quanto bruscamente o gradualmente l' immagine cambia in quel punto, e quindi della probabilit\`{a} che quella parte di immagine rappresenti un contorno. In termini matematici, il gradiente di una funzione in due variabili \`{e} in ciascun punto dell' immagine un vettore bi-dimensionale le cui componenti sono le derivate del valore della luminosit\`{a} in direzione orizzontale e verticale. In ciascun punto dell' immagine questo vettore gradiente punta nella direzione di massimo aumento della luminosit\`{a}, e la lunghezza del vettore corrisponde alla rapidit\`{a} con cui la luminosit\`{a} cambia spostandosi in quella direzione. Nelle zone dell' immagine in cui la luminosit\`{a} \`{e} costante l' operatore di Sobel ha valore zero, mentre nei punti posti sui contorni \`{e} un vettore orientato attraveso il contorno, che punta nella direzione in cui si passa da valori di scuro a valori di chiaro.
+
+  L' operatore applica una operazione di convoluzione utilizzando due kernel $3 \times 3$ all' immagine originale per calcolare i valori approssimati delle derivate lungo le due direzioni, orizzonatale e verticale. Chiamando $\mathbf{A}$ l' immagine sorgente, e $\mathbf{G}_{x}$, $\mathbf{G}_{y}$ la componente x ed y del gradiente, l' operazione \`{e} descritta da :
+  \begin{equation}
+\mathbf{G}_{x}=\left[\begin{array}{lll}
++1 & 0 & -1 \\
++2 & 0 & -2 \\
++1 & 0 & -1
+\end{array}\right] * \mathbf{A} \quad \text { e } \quad \mathbf{G}_{y}=\left[\begin{array}{ccc}
++1 & +2 & +1 \\
+0 & 0 & 0 \\
+-1 & -2 & -1
+\end{array}\right] * \mathbf{A}
+\end{equation}
+  dove $*$ indica l' operazione di convoluzione bi-dimensionale.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}

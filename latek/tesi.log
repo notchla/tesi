@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.12)  23 JUN 2021 12:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.12)  24 JUN 2021 13:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -554,18 +554,30 @@ Package pdftex.def Info: ../images/resnet.png  used on input line 263.
 Capitolo 2.
 [14
 
-] [15] [16
+]
+<../images/resblocks.png, id=81, 428.60126pt x 393.47pt>
+File: ../images/resblocks.png Graphic file (type png)
+<use ../images/resblocks.png>
+Package pdftex.def Info: ../images/resblocks.png  used on input line 302.
+(pdftex.def)             Requested size: 128.58136pt x 118.0419pt.
+ [15]
+<../images/cascadetraining.png, id=85, 475.7775pt x 259.97125pt>
+File: ../images/cascadetraining.png Graphic file (type png)
+<use ../images/cascadetraining.png>
+Package pdftex.def Info: ../images/cascadetraining.png  used on input line 313.
+(pdftex.def)             Requested size: 142.73434pt x 77.99197pt.
+ [16 <../images/resblocks.png> <../images/cascadetraining.png>] [17] [18] [19
 
 
 
 ]
-Overfull \hbox (4.68782pt too wide) in paragraph at lines 309--309
+Overfull \hbox (4.68782pt too wide) in paragraph at lines 363--363
 \OT1/cmr/m/it/12 ce on Da-ta Mi-ning Work-shops (ICDMW) \OT1/cmr/m/n/12 (dic. 2016). ar-Xiv: 1608.04667,
  []
 
-[17
+[20
 
-] [18] [19
+] [21] [22] [23
 
 
 
@@ -575,18 +587,18 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9904 strings out of 494912
- 166694 string characters out of 6180266
- 563045 words of memory out of 5000000
- 13056 multiletter control sequences out of 15000+600000
+ 9923 strings out of 494912
+ 167310 string characters out of 6180266
+ 563278 words of memory out of 5000000
+ 13073 multiletter control sequences out of 15000+600000
  14760 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  45i,11n,45p,1473b,1256s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on /home/notchla/Documents/Tesi/latek/tesi.pdf (24 pages, 293075 bytes).
+Output written on /home/notchla/Documents/Tesi/latek/tesi.pdf (28 pages, 341974 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 153 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
