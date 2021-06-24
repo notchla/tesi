@@ -316,32 +316,57 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \end{figure}
 
   \section{Funzione di loss Edge-aware}
-  Molte reti di denoising puntano a minimizzare l' Errore Quadratico Medio (MSE) $\frac{1}{N} \sum_{i=1}^{N}\left\|X_{i}-\hat{X}_{i}\right\|^{2}$ sul data di training. In questa rete viene utilizzata una funzione di loss dove ai pixel che rappresentano dei bordi dell' oggetto vengono assegnati pesi piu grandi rispetto agli altri pixel.
+  Molte reti di denoising puntano a minimizzare l' Errore Quadratico Medio (MSE) sul data di training.
+  \begin{equation}
+    \frac{1}{N} \sum_{i=1}^{N}\left\|X_{i}-\hat{X}_{i}\right\|^{2}
+    \label{eq:mse}
+  \end{equation}
+   In questa rete viene utilizzata una funzione di loss dove ai pixel che rappresentano dei bordi dell' oggetto vengono assegnati pesi piu grandi rispetto agli altri pixel.
 
   \begin{equation}
     \operatorname{edge-loss}=w \times \frac{1}{N} \sum_{i=1}^{N}\left\|X_{i} M_{i}-\hat{X}_{i} M_{i}\right\|^{2}
     \label{eq:edge-aware}
   \end{equation}
-  In Eq. \ref{eq:edge-aware}, $X_i$ \`{e} l' i-esima immagine pulita, $\hat{X}_{i}$ \`{e} i-esima immagine a cui \`{e} stato applicato il denoising, $M$ \`{e} una edge map, $N$ \`{e} il numero di immagini e $w$ \`{e} una costante per controllare il trade-off tra i pixel negli edge e nel resto dell' immagine.
+
+  In Eq. \ref{eq:edge-aware}, \ref{eq:mse}, $X_i$ \`{e} l' i-esima immagine pulita, $\hat{X}_{i}$ \`{e} i-esima immagine a cui \`{e} stato applicato il denoising, $M$ \`{e} una edge map, $N$ \`{e} il numero di immagini e $w$ \`{e} una costante per controllare il trade-off tra i pixel negli edge e nel resto dell' immagine.
 
   Ci sono due vantaggi nell' applicare questa funzione di loss edge-aware. Il primo \`{e} che una delle sfide principali nel denoising consiste nella difficolta di riconoscere i bordi dell' oggetto, soprattuto in caso di rumore elevato, mentre aggiungere un vincolo nella funzione di loss risulta molto semplice. Il secondo \`{e} che dal punto di vista della qualit\`{a} dell' immagine, aumentare la precisione del denoising sui bordi dell' oggetto ne aumenta la definizione.
 
   M pu\`{o} essere costruito in due modi, tramite la magnitudine del gradiente ottenuto dai filtri di sobel o tramite una maschera binaria ottenuta impostando una soglia di valore del pixel da superare. I risultati migliori si ottengono tramite i \textbf{filtri di sobel}.\\
-  L' operatore di sobel calcola un valore approssimato del valore in ogni punto del gradiente della funzione che rappresenta la luminosit\`{a} dell' immagine. L' operatore trova la direzione lungo il quale si ha il massimo incremento dal chiaro allo scuro, e la velocit\`{a} con cui avviene il cambiamento lungo questa direzione. Il risultato finale fornisce una misura di quanto bruscamente o gradualmente l' immagine cambia in quel punto, e quindi della probabilit\`{a} che quella parte di immagine rappresenti un contorno. In termini matematici, il gradiente di una funzione in due variabili \`{e} in ciascun punto dell' immagine un vettore bi-dimensionale le cui componenti sono le derivate del valore della luminosit\`{a} in direzione orizzontale e verticale. In ciascun punto dell' immagine questo vettore gradiente punta nella direzione di massimo aumento della luminosit\`{a}, e la lunghezza del vettore corrisponde alla rapidit\`{a} con cui la luminosit\`{a} cambia spostandosi in quella direzione. Nelle zone dell' immagine in cui la luminosit\`{a} \`{e} costante l' operatore di Sobel ha valore zero, mentre nei punti posti sui contorni \`{e} un vettore orientato attraveso il contorno, che punta nella direzione in cui si passa da valori di scuro a valori di chiaro.
+  L' operatore di sobel calcola un valore approssimato del valore in ogni punto del gradiente della funzione che rappresenta la luminosit\`{a} dell' immagine. L' operatore trova la direzione lungo il quale si ha il massimo incremento dal chiaro allo scuro, e la velocit\`{a} con cui avviene il cambiamento lungo questa direzione. Il risultato finale fornisce una misura di quanto bruscamente o gradualmente l' immagine cambia in quel punto, e quindi della probabilit\`{a} che quella parte di immagine rappresenti un contorno. In termini matematici, il gradiente di una funzione in due variabili \`{e} in ciascun punto dell' immagine un vettore bi-dimensionale le cui componenti sono le derivate del valore della luminosit\`{a} in direzione orizzontale e verticale. In ciascun punto dell' immagine questo vettore gradiente punta nella direzione di massimo aumento della luminosit\`{a}, e la lunghezza del vettore corrisponde alla rapidit\`{a} con cui la luminosit\`{a} cambia spostandosi in quella direzione. Nelle zone dell' immagine in cui la luminosit\`{a} \`{e} costante l' operatore di Sobel ha valore zero, mentre nei punti posti sui bordi \`{e} un vettore orientato attraveso il contorno, che punta nella direzione in cui si passa da valori di scuro a valori di chiaro.
 
   L' operatore applica una operazione di convoluzione utilizzando due kernel $3 \times 3$ all' immagine originale per calcolare i valori approssimati delle derivate lungo le due direzioni, orizzonatale e verticale. Chiamando $\mathbf{A}$ l' immagine sorgente, e $\mathbf{G}_{x}$, $\mathbf{G}_{y}$ la componente x ed y del gradiente, l' operazione \`{e} descritta da :
   \begin{equation}
-\mathbf{G}_{x}=\left[\begin{array}{lll}
-+1 & 0 & -1 \\
-+2 & 0 & -2 \\
-+1 & 0 & -1
-\end{array}\right] * \mathbf{A} \quad \text { e } \quad \mathbf{G}_{y}=\left[\begin{array}{ccc}
-+1 & +2 & +1 \\
-0 & 0 & 0 \\
--1 & -2 & -1
-\end{array}\right] * \mathbf{A}
-\end{equation}
-  dove $*$ indica l' operazione di convoluzione bi-dimensionale.
+    \mathbf{G}_{x}=\left[\begin{array}{lll}
+    +1 & 0 & -1 \\
+    +2 & 0 & -2 \\
+    +1 & 0 & -1
+    \end{array}\right] * \mathbf{A} \quad \text { e } \quad \mathbf{G}_{y}=\left[\begin{array}{ccc}
+    +1 & +2 & +1 \\
+    0 & 0 & 0 \\
+    -1 & -2 & -1
+    \end{array}\right] * \mathbf{A}
+  \end{equation}
+  dove $*$ indica l' operazione di convoluzione bi-dimensionale. In ogni punto dell' immagine, le approssimazioni del gradiente possono essere combinate per ottenere la magnitudine del gradiente :
+  \begin{equation}
+    \mathbf{G}=\sqrt{\mathbf{G}_{x}^{2}+\mathbf{G}_{y}{ }^{2}}
+  \end{equation}
+
+  \section{Perceptual Loss}
+  L' errore quadratico medio \ref{eq:mse} calcola la distanza pixel per pixel del l'output del modello con l' immagine target. Questa differenza puntuale tende a lisciare i valori dei pixel e ad aumentare la sfocatura dell' immagine. Per ovviare a questi problemi viene introdotta una \textbf{multi scales perceptual loss}, mostrata nella seguente formula :
+  \begin{equation}
+    L_{m u l t i-p}=\frac{1}{N S} \sum_{i=1}^{N} \sum_{s=1}^{S}\left\|\phi_{s}\left(F\left(x_{i}, \theta\right), \hat{\theta}\right)-\phi_{s}\left(y_{i}, \hat{\theta}\right)\right\|^{2}
+  \end{equation}
+  In questa formula, $x_i$ \`{e} l'input, $y_i$ \`{e} il target e $N$ \`{e} il numero di immagini. $F$ rappresenta la rete di denoising con parametri $\theta$. $\phi$ rappresenta un modello con dei pesi fissati pre-trainati $\hat{\theta}$, usato per calcolare la perceptual loss. S \`{e} il numero di stage usati nel modello pre-trainato.
+
+  Per costruire la perceptual loss \`{e} utilizzato Resnet-50 come estrattore delle feature map, in particolare sono stati rimossi i layer di pooling e i layer completamente connessi alla fine della rete, mantenendo solo i layer convoluzionari. Inizialmente viene caricato il modello con i pesi trainati sul dataset ImageNet \cite{deng_imagenet_2009}, i pesi vengono "freezati" e resi non trainabili. Durante il calcolo del valore della perceptual loss, sia l'output denoised che l' immagine target vengono passati all' estrattore per fare forward propagation. Vengono scelte le feature map dei quattro stage di ResNet, il quale ognuno dimezza lo spazio dell' immagine, rappresentando caratteristiche spaziali in forme diverse. A questo punto viene utilizzato MSE per misurare la similitudine tra queste feature map. La multi-scale perceptual loss \`{e} ottenuta facendo la media tra queste similitudini.
+
+
+  \begin{figure}
+    \includegraphics[scale = 0.3]{multiscale.png}
+    \caption[Multi-scale perceptual loss]{multi-scale perceptual loss basata su Resnet-50, composto da 4 stage principali \ref{he_deep_2015}}
+    \label{fig:multiscale}
+  \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}

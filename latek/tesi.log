@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.12)  24 JUN 2021 13:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.12)  24 JUN 2021 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -571,7 +571,7 @@ Package pdftex.def Info: ../images/cascadetraining.png  used on input line 313.
 
 
 ]
-Overfull \hbox (4.68782pt too wide) in paragraph at lines 363--363
+Overfull \hbox (4.68782pt too wide) in paragraph at lines 375--375
 \OT1/cmr/m/it/12 ce on Da-ta Mi-ning Work-shops (ICDMW) \OT1/cmr/m/n/12 (dic. 2016). ar-Xiv: 1608.04667,
  []
 
@@ -587,15 +587,15 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9923 strings out of 494912
- 167310 string characters out of 6180266
- 563278 words of memory out of 5000000
- 13073 multiletter control sequences out of 15000+600000
+ 9924 strings out of 494912
+ 167318 string characters out of 6180266
+ 563289 words of memory out of 5000000
+ 13074 multiletter control sequences out of 15000+600000
  14760 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  45i,11n,45p,1473b,1256s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on /home/notchla/Documents/Tesi/latek/tesi.pdf (28 pages, 341974 bytes).
+Output written on /home/notchla/Documents/Tesi/latek/tesi.pdf (28 pages, 342252 bytes).
 PDF statistics:
  153 PDF objects out of 1000 (max. 8388607)
  100 compressed objects within 1 object stream

@@ -32,4 +32,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Funzione di loss Edge-aware}{17}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Perceptual Loss}{18}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Conclusioni}{19}
