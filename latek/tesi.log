@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.12)  26 JUN 2021 10:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.12)  26 JUN 2021 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -536,54 +536,54 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 <../images/mlp.png, id=57, 714.67pt x 865.2325pt>
 File: ../images/mlp.png Graphic file (type png)
 <use ../images/mlp.png>
-Package pdftex.def Info: ../images/mlp.png  used on input line 217.
+Package pdftex.def Info: ../images/mlp.png  used on input line 218.
 (pdftex.def)             Requested size: 214.40265pt x 259.57175pt.
  [10 <../images/mlp.png>] [11]
 <../images/convolution.png, id=67, 949.5475pt x 826.08624pt>
 File: ../images/convolution.png Graphic file (type png)
 <use ../images/convolution.png>
-Package pdftex.def Info: ../images/convolution.png  used on input line 252.
+Package pdftex.def Info: ../images/convolution.png  used on input line 255.
 (pdftex.def)             Requested size: 284.86644pt x 247.82777pt.
  [12 <../images/convolution.png>]
 <../images/resnet.png, id=72, 383.4325pt x 697.60625pt>
 File: ../images/resnet.png Graphic file (type png)
 <use ../images/resnet.png>
-Package pdftex.def Info: ../images/resnet.png  used on input line 263.
+Package pdftex.def Info: ../images/resnet.png  used on input line 268.
 (pdftex.def)             Requested size: 115.03062pt x 209.28348pt.
- [13 <../images/resnet.png>]
+ [13 <../images/resnet.png>] [14]
 Capitolo 2.
-[14
+[15
 
 ]
-<../images/resblocks.png, id=81, 428.60126pt x 393.47pt>
+<../images/resblocks.png, id=84, 428.60126pt x 393.47pt>
 File: ../images/resblocks.png Graphic file (type png)
 <use ../images/resblocks.png>
-Package pdftex.def Info: ../images/resblocks.png  used on input line 302.
+Package pdftex.def Info: ../images/resblocks.png  used on input line 306.
 (pdftex.def)             Requested size: 128.58136pt x 118.0419pt.
- [15]
-<../images/cascadetraining.png, id=85, 475.7775pt x 259.97125pt>
+ [16]
+<../images/cascadetraining.png, id=88, 475.7775pt x 259.97125pt>
 File: ../images/cascadetraining.png Graphic file (type png)
 <use ../images/cascadetraining.png>
-Package pdftex.def Info: ../images/cascadetraining.png  used on input line 313.
+Package pdftex.def Info: ../images/cascadetraining.png  used on input line 317.
 (pdftex.def)             Requested size: 142.73434pt x 77.99197pt.
- [16 <../images/resblocks.png> <../images/cascadetraining.png>] [17] [18]
-<../images/multiscale.png, id=97, 770.88pt x 310.15875pt>
+ [17 <../images/resblocks.png> <../images/cascadetraining.png>] [18] [19]
+<../images/multiscale.png, id=100, 770.88pt x 310.15875pt>
 File: ../images/multiscale.png Graphic file (type png)
 <use ../images/multiscale.png>
-Package pdftex.def Info: ../images/multiscale.png  used on input line 367.
+Package pdftex.def Info: ../images/multiscale.png  used on input line 371.
 (pdftex.def)             Requested size: 231.26578pt x 93.04834pt.
- [19 <../images/multiscale.png>] [20] [21
+ [20 <../images/multiscale.png>] [21] [22
 
 
 
-] [22
+] [23
 
 ]
-Overfull \hbox (4.68782pt too wide) in paragraph at lines 408--408
+Overfull \hbox (4.68782pt too wide) in paragraph at lines 412--412
 \OT1/cmr/m/it/12 ce on Da-ta Mi-ning Work-shops (ICDMW) \OT1/cmr/m/n/12 (dic. 2016). ar-Xiv: 1608.04667,
  []
 
-[23] [24] [25
+[24] [25] [26
 
 
 
@@ -593,18 +593,18 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9944 strings out of 494912
- 167849 string characters out of 6180266
- 563403 words of memory out of 5000000
- 13093 multiletter control sequences out of 15000+600000
+ 9948 strings out of 494912
+ 168047 string characters out of 6180266
+ 563529 words of memory out of 5000000
+ 13097 multiletter control sequences out of 15000+600000
  14760 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 45i,11n,45p,1492b,1256s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,11n,45p,1676b,1256s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on /home/notchla/Documents/Tesi/latek/tesi.pdf (30 pages, 392128 bytes).
+Output written on /home/notchla/Documents/Tesi/latek/tesi.pdf (31 pages, 392886 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 166 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

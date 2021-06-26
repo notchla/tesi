@@ -1,15 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'tesi.blg'
-[25] biber:313> INFO - === gio giu 24, 2021, 18:28:21
+[24] biber:313> INFO - === sab giu 26, 2021, 15:44:47
 [45] Biber.pm:371> INFO - Reading 'tesi.bcf'
-[104] Biber.pm:857> INFO - Found 15 citekeys in bib section 0
-[117] Biber.pm:3981> INFO - Processing section 0
-[128] Biber.pm:4154> INFO - Looking for bibtex format file 'tesi.bib' for section 0
-[132] bibtex.pm:1468> INFO - LaTeX decoding ...
-[168] bibtex.pm:1294> INFO - Found BibTeX data source 'tesi.bib'
-[304] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[305] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'variable = shifted' with 'variable = non-ignorable'
-[305] Biber.pm:3809> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'it-IT'
-[305] Biber.pm:3815> INFO - No sort tailoring available for locale 'it-IT'
-[324] bbl.pm:617> INFO - Writing 'tesi.bbl' with encoding 'latin1'
-[337] bbl.pm:720> INFO - Output to tesi.bbl
+[107] Biber.pm:857> INFO - Found 17 citekeys in bib section 0
+[120] Biber.pm:3981> INFO - Processing section 0
+[130] Biber.pm:4154> INFO - Looking for bibtex format file 'tesi.bib' for section 0
+[133] bibtex.pm:1468> INFO - LaTeX decoding ...
+[171] bibtex.pm:1294> INFO - Found BibTeX data source 'tesi.bib'
+[337] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[337] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[337] Biber.pm:3809> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'it-IT'
+[337] Biber.pm:3815> INFO - No sort tailoring available for locale 'it-IT'
+[359] bbl.pm:617> INFO - Writing 'tesi.bbl' with encoding 'latin1'
+[373] bbl.pm:720> INFO - Output to tesi.bbl

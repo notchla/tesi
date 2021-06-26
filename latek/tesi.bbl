@@ -533,6 +533,79 @@
       \verb https://doi.org/10.1007/s10796-014-9527-0
       \endverb
     \endentry
+    \entry{liang_edcnn_2020}{article}{}
+      \name{author}{6}{}{%
+        {{hash=17eb09b75aefece393f719a74a1e3816}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Tengfei},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a60c53b2bc1d03cc76d96632b99f201b}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=864b1b3afa60bef11e0ddb9fa5df4581}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yidong},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ad1506e9f10da2cad4389eac16751647}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Tao},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8e2a1a5b6279cf15bb20ea7c78bf1286}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Songhe},
+           giveni={S\bibinitperiod}}}%
+        {{hash=30cc5fb069ec4ecf53a88a96eaf0b071}{%
+           family={Lang},
+           familyi={L\bibinitperiod},
+           given={Congyan},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d4ded7053bd792fdddaac73e4ff4fc5e}
+      \strng{fullhash}{8db5b7c699a5967de31dcb61b5a96481}
+      \strng{bibnamehash}{d4ded7053bd792fdddaac73e4ff4fc5e}
+      \strng{authorbibnamehash}{d4ded7053bd792fdddaac73e4ff4fc5e}
+      \strng{authornamehash}{d4ded7053bd792fdddaac73e4ff4fc5e}
+      \strng{authorfullhash}{8db5b7c699a5967de31dcb61b5a96481}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In the past few decades, to reduce the risk of X-ray in computed tomography (CT), low-dose CT image denoising has attracted extensive attention from researchers, which has become an important research issue in the ﬁeld of medical images. In recent years, with the rapid development of deep learning technology, many algorithms have emerged to apply convolutional neural networks to this task, achieving promising results. However, there are still some problems such as low denoising efﬁciency, over-smoothed result, etc. In this paper, we propose the Edge enhancement based Densely connected Convolutional Neural Network (EDCNN). In our network, we design an edge enhancement module using the proposed novel trainable Sobel convolution. Based on this module, we construct a model with dense connections to fuse the extracted edge information and realize end-to-end image denoising. Besides, when training the model, we introduce a compound loss that combines MSE loss and multi-scales perceptual loss to solve the over-smoothed problem and attain a marked improvement in image quality after denoising. Compared with the existing lowdose CT image denoising algorithms, our proposed model has a better performance in preserving details and suppressing noise.}
+      \field{journaltitle}{2020 15th IEEE International Conference on Signal Processing (ICSP)}
+      \field{month}{12}
+      \field{note}{arXiv: 2011.00139}
+      \field{shorttitle}{{EDCNN}}
+      \field{title}{{EDCNN}: {Edge} enhancement-based {Densely} {Connected} {Network} with {Compound} {Loss} for {Low}-{Dose} {CT} {Denoising}}
+      \field{urlday}{13}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{193\bibrangedash 198}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICSP48669.2020.9320928
+      \endverb
+      \verb{file}
+      \verb Liang et al. - 2020 - EDCNN Edge enhancement-based Densely Connected Ne.pdf:/home/notchla/Zotero/storage/LL3LLQXC/Liang et al. - 2020 - EDCNN Edge enhancement-based Densely Connected Ne.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2011.00139
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2011.00139
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition,Electrical Engineering and Systems Science - Image and Video Processing}
+    \endentry
     \entry{lim_enhanced_2017}{article}{}
       \name{author}{5}{}{%
         {{hash=b084ebdeb6818fd9dbe5d87e44cabee0}{%
@@ -696,6 +769,59 @@
       \verb http://arxiv.org/abs/1711.04048
       \endverb
       \keyw{Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{ren_dn-resnet_2018}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1f01fbc8b0dc3a7e0215d2a35cde33b8}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Haoyu},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6b6b6b99c02706a53b5b83ee0948d46f}{%
+           family={El-Khamy},
+           familyi={E\bibinithyphendelim K\bibinitperiod},
+           given={Mostafa},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4ed3205e7f4fa4288cc3b1d761ea26ed}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jungwon},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{fullhash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{bibnamehash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{authorbibnamehash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{authornamehash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \strng{authorfullhash}{9cc879ea7021d9093f0a5cc5cbd2afe2}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A deep learning approach to blind denoising of images without complete knowledge of the noise statistics is considered. We propose DN-ResNet, which is a deep convolutional neural network (CNN) consisting of several residual blocks (ResBlocks). With cascade training, DN-ResNet is more accurate and more computationally eﬃcient than the state of art denoising networks. An edge-aware loss function is further utilized in training DN-ResNet, so that the denoising results have better perceptive quality compared to conventional loss function. Next, we introduce the depthwise separable DN-ResNet (DS-DN-ResNet) utilizing the proposed Depthwise Seperable ResBlock (DS-ResBlock) instead of standard ResBlock, which has much less computational cost. DS-DN-ResNet is incrementally evolved by replacing the ResBlocks in DN-ResNet by DS-ResBlocks stage by stage. As a result, high accuracy and good computational eﬃciency are achieved concurrently. Whereas previous state of art deep learning methods focused on denoising either Gaussian or Poisson corrupted images, we consider denoising images having the more practical Poisson with additive Gaussian noise as well. The results show that DN-ResNets are more eﬃcient, robust, and perform better denoising than current state of art deep learning methods, as well as the popular variants of the BM3D algorithm, in cases of blind and non-blind denoising of images corrupted with Poisson, Gaussian or Poisson-Gaussian noise. Our network also works well for other image enhancement task such as compressed image restoration.}
+      \field{journaltitle}{arXiv:1810.06766 [cs, eess]}
+      \field{month}{10}
+      \field{note}{arXiv: 1810.06766}
+      \field{shorttitle}{{DN}-{ResNet}}
+      \field{title}{{DN}-{ResNet}: {Efficient} {Deep} {Residual} {Network} for {Image} {Denoising}}
+      \field{urlday}{13}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Ren et al. - 2018 - DN-ResNet Efficient Deep Residual Network for Ima.pdf:/home/notchla/Zotero/storage/PR7WHXHF/Ren et al. - 2018 - DN-ResNet Efficient Deep Residual Network for Ima.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1810.06766
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1810.06766
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition,Electrical Engineering and Systems Science - Image and Video Processing}
     \endentry
     \entry{tian_deep_2020}{article}{}
       \name{author}{6}{}{%

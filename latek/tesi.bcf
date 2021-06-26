@@ -1944,13 +1944,15 @@
     <bcf:citekey order="13">Goodfellow-et-al-2016</bcf:citekey>
     <bcf:citekey order="14">he_deep_2015</bcf:citekey>
     <bcf:citekey order="15">foi_practical_2008</bcf:citekey>
-    <bcf:citekey order="16">he_deep_2015</bcf:citekey>
-    <bcf:citekey order="17">ioffe_batch_2015</bcf:citekey>
-    <bcf:citekey order="18">lim_enhanced_2017</bcf:citekey>
-    <bcf:citekey order="19">ren_ct-srcnn_2017</bcf:citekey>
-    <bcf:citekey order="20">deng_imagenet_2009</bcf:citekey>
-    <bcf:citekey order="21">he_deep_2015</bcf:citekey>
-    <bcf:citekey order="22">he_deep_2015</bcf:citekey>
+    <bcf:citekey order="16">ren_dn-resnet_2018</bcf:citekey>
+    <bcf:citekey order="17">he_deep_2015</bcf:citekey>
+    <bcf:citekey order="18">ioffe_batch_2015</bcf:citekey>
+    <bcf:citekey order="19">lim_enhanced_2017</bcf:citekey>
+    <bcf:citekey order="20">ren_ct-srcnn_2017</bcf:citekey>
+    <bcf:citekey order="21">liang_edcnn_2020</bcf:citekey>
+    <bcf:citekey order="22">deng_imagenet_2009</bcf:citekey>
+    <bcf:citekey order="23">he_deep_2015</bcf:citekey>
+    <bcf:citekey order="24">he_deep_2015</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
