@@ -364,9 +364,29 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
 
   \begin{figure}
     \includegraphics[scale = 0.3]{multiscale.png}
-    \caption[Multi-scale perceptual loss]{multi-scale perceptual loss basata su Resnet-50, composto da 4 stage principali \ref{he_deep_2015}}
+    \caption[Multi-scale perceptual loss]{multi-scale perceptual loss basata su Resnet-50, composto da 4 stage principali \cite{he_deep_2015}}
     \label{fig:multiscale}
   \end{figure}
+
+  \section{Compound Loss}
+  Combinando le funzioni di loss descritte in precedenza otteniamo la funzione \ref{eq:compound loss}, che ha l'obbiettivo di ottenere una similitudine tra i valori dei pixel, mantenendo i dettagli strutturali dell' oggetto e aumentandone la definizione dei contorni.
+
+  \begin{equation}
+    L_{mse}= \frac{1}{N} \sum_{i=1}^{N}\left\|X_{i}-\hat{X}_{i}\right\|^{2}
+  \end{equation}
+
+  \begin{equation}
+    L_{edge} = \frac{1}{N} \sum_{i=1}^{N}\left\|X_{i} M_{i}-\hat{X}_{i} M_{i}\right\|^{2}
+  \end{equation}
+
+  \begin{equation}
+    L_{m u l t i-p}=\frac{1}{N S} \sum_{i=1}^{N} \sum_{s=1}^{S}\left\|\phi_{s}\left(F\left(x_{i}, \theta\right), \hat{\theta}\right)-\phi_{s}\left(y_{i},     \hat{\theta}\right)\right\|^{2}
+  \end{equation}
+
+  \begin{equation}
+    L_{\text {compound }}=L_{m s e}+w_{p} \cdot L_{\text {multi- } p }+ w_{e} \cdot L_{edge}
+    \label{eq:compound loss}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}

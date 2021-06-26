@@ -197,6 +197,9 @@ INPUT ../images/resblocks.png
 INPUT /home/notchla/Documents/Tesi/latek/../images/cascadetraining.png
 INPUT ../images/cascadetraining.png
 INPUT ../images/cascadetraining.png
+INPUT /home/notchla/Documents/Tesi/latek/../images/multiscale.png
+INPUT ../images/multiscale.png
+INPUT ../images/multiscale.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT /home/notchla/Documents/Tesi/latek/tesi.aux

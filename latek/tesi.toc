@@ -34,4 +34,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Perceptual Loss}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusioni}{19}
+\contentsline {section}{\numberline {2.5}Compound Loss}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Conclusioni}{21}
