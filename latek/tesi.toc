@@ -36,4 +36,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Compound Loss}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusioni}{22}
+\contentsline {chapter}{\numberline {3}Risultati}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Datasets}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Valutazione del denoising}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Conclusioni}{25}

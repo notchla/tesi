@@ -19,6 +19,47 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{abdi_panoramic_2017}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e112139f712fb7534e4189d799725af0}{%
+           family={Abdi},
+           familyi={A\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mendeley}%
+      }
+      \strng{namehash}{e112139f712fb7534e4189d799725af0}
+      \strng{fullhash}{e112139f712fb7534e4189d799725af0}
+      \strng{bibnamehash}{e112139f712fb7534e4189d799725af0}
+      \strng{authorbibnamehash}{e112139f712fb7534e4189d799725af0}
+      \strng{authornamehash}{e112139f712fb7534e4189d799725af0}
+      \strng{authorfullhash}{e112139f712fb7534e4189d799725af0}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This dataset consists of anonymized and deidentified panoramic dental X-rays of 116 patients, taken at Noor Medical Imaging Center, Qom, Iran. The subjects cover a wide range of dental conditions from healthy, to partial and complete edentulous cases. The mandibles of all cases are manually segmented by two dentists. This dataset is used as the basis for the article by Abdi et al [1]. [1] A. H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation of mandible in panoramic x-ray,” J. Med. Imaging, vol. 2, no. 4, p. 44003, 2015.}
+      \field{month}{11}
+      \field{note}{Type: dataset}
+      \field{title}{Panoramic {Dental} X-rays {With} {Segmented} {Mandibles}}
+      \field{urlday}{27}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.17632/HXT48YK462.1
+      \endverb
+      \verb{urlraw}
+      \verb https://data.mendeley.com/datasets/hxt48yk462/1
+      \endverb
+      \verb{url}
+      \verb https://data.mendeley.com/datasets/hxt48yk462/1
+      \endverb
+      \keyw{Applied Sciences,Health Sciences}
+    \endentry
     \entry{boyat_review_2015}{article}{}
       \name{author}{2}{}{%
         {{hash=ad5f3f713bf8e396753f8240184cfe91}{%
@@ -533,6 +574,36 @@
       \verb https://doi.org/10.1007/s10796-014-9527-0
       \endverb
     \endentry
+    \entry{knuth97}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fcbea740aeb72b8e941e0d4aa9f6a9c6}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
+      \strng{fullhash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
+      \strng{bibnamehash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
+      \strng{authorbibnamehash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
+      \strng{authornamehash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
+      \strng{authorfullhash}{fcbea740aeb72b8e941e0d4aa9f6a9c6}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Third}
+      \field{isbn}{0201896842 9780201896848}
+      \field{title}{The Art of Computer Programming, Volume 2: Seminumerical Algorithms}
+      \field{year}{1997}
+      \keyw{algorithm knuth no.pdf taocp textbook}
+    \endentry
     \entry{liang_edcnn_2020}{article}{}
       \name{author}{6}{}{%
         {{hash=17eb09b75aefece393f719a74a1e3816}{%
@@ -823,6 +894,100 @@
       \endverb
       \keyw{Computer Science - Computer Vision and Pattern Recognition,Electrical Engineering and Systems Science - Image and Video Processing}
     \endentry
+    \entry{suckling_mammographic_1994}{article}{}
+      \name{author}{12}{}{%
+        {{hash=47175789efda61aa72ca0f7d72641e33}{%
+           family={Suckling},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4d72bd72e55996c97b4591cdeecb9a03}{%
+           family={Parker},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5e90e2826619c2ff1ed95b7ceb4b51d2}{%
+           family={Astley},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=220b7c8c8521ac818e69e5501535f877}{%
+           family={Hutt},
+           familyi={H\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=d17bb907df5638628bfdde6e56deb1a8}{%
+           family={Boggis},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=94abf0815aa99e5ced1728404955407e}{%
+           family={Ricketts},
+           familyi={R\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=c0488a8d75210d159a6d7ead39a3d703}{%
+           family={Stamatakis},
+           familyi={S\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=0acc64c7f4016d071ece09b59d3cd015}{%
+           family={Cerneaz},
+           familyi={C\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=adf2e358d2f7c9d34780721c40ba1955}{%
+           family={Kok},
+           familyi={K\bibinitperiod},
+           given={Sl},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5d4fcc3aa4ff06b646516951361339e2}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0b0ce692ba818d25f4a01c80005e75c8}{%
+           family={Betal},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0e55749673f366762788a1cc41f0fdeb}{%
+           family={Savage},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{e13c70ddaa6304e581ee032554aa0fbf}
+      \strng{fullhash}{f22ac22baccbe390b8ffb816ea313100}
+      \strng{bibnamehash}{e13c70ddaa6304e581ee032554aa0fbf}
+      \strng{authorbibnamehash}{e13c70ddaa6304e581ee032554aa0fbf}
+      \strng{authornamehash}{e13c70ddaa6304e581ee032554aa0fbf}
+      \strng{authorfullhash}{f22ac22baccbe390b8ffb816ea313100}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A clamp or grip for heavy duty work with twisted wire cables and the like, such as in marine and industrial uses and especially where reasonably easy application of the cable grip to the cable is important and undue bending moments on the heavy cables are to be avoided. The feature of a removable jaw is coupled with dual link bar structure for the jaws without sacrificing strength and with a considerable reduction in overall weight of the clamp as compared to presently available equipment, this being accomplished in part by elimination of a frame as such and providing the principal jaw with a slotted stabilizing arm having a sliding connection with a unique hanger bar, which latter is designed to be connected to the lift hook of a crane or the like.}
+      \field{journaltitle}{undefined}
+      \field{title}{The {Mammographic} {Image} {Analysis} {Society} digital mammogram database}
+      \field{urlday}{27}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{year}{1994}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/home/notchla/Zotero/storage/HQRG953W/81e89f25baed869a690ffc6f93cd0306c58efe14.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.semanticscholar.org/paper/The-Mammographic-Image-Analysis-Society-digital-Suckling-Parker/81e89f25baed869a690ffc6f93cd0306c58efe14
+      \endverb
+      \verb{url}
+      \verb https://www.semanticscholar.org/paper/The-Mammographic-Image-Analysis-Society-digital-Suckling-Parker/81e89f25baed869a690ffc6f93cd0306c58efe14
+      \endverb
+    \endentry
     \entry{tian_deep_2020}{article}{}
       \name{author}{6}{}{%
         {{hash=a19152e724e441499c891fff4e4585b9}{%
@@ -890,6 +1055,59 @@
       \verb http://arxiv.org/abs/1912.13171
       \endverb
       \keyw{Computer Science - Computer Vision and Pattern Recognition,Electrical Engineering and Systems Science - Image and Video Processing}
+    \endentry
+    \entry{wang_image_2004}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f244e8ae5eff7776cf2b4b5b84ad8c4a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhou},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=af39443f093feaa0e1da58198816cc6f}{%
+           family={Bovik},
+           familyi={B\bibinitperiod},
+           given={A.C.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bb97c090657bd613989ddb723a082403}{%
+           family={Sheikh},
+           familyi={S\bibinitperiod},
+           given={H.R.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=e6e73c367a4e38f958aafd8d02e49f14}{%
+           family={Simoncelli},
+           familyi={S\bibinitperiod},
+           given={E.P.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec7f3703fbd419b313e0a329e6241059}
+      \strng{fullhash}{dfd56326ac72d7fede0c49333153a4e4}
+      \strng{bibnamehash}{ec7f3703fbd419b313e0a329e6241059}
+      \strng{authorbibnamehash}{ec7f3703fbd419b313e0a329e6241059}
+      \strng{authornamehash}{ec7f3703fbd419b313e0a329e6241059}
+      \strng{authorfullhash}{dfd56326ac72d7fede0c49333153a4e4}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Objective methods for assessing perceptual image quality traditionally attempted to quantify the visibility of errors (differences) between a distorted image and a reference image using a variety of known properties of the human visual system. Under the assumption that human visual perception is highly adapted for extracting structural information from a scene, we introduce an alternative complementary framework for quality assessment based on the degradation of structural information. As a specific example of this concept, we develop a structural similarity index and demonstrate its promise through a set of intuitive examples, as well as comparison to both subjective ratings and state-of-the-art objective methods on a database of images compressed with JPEG and JPEG2000. A MATLAB implementation of the proposed algorithm is available online at http://www.cns.nyu.edu//spl sim/lcv/ssim/.}
+      \field{issn}{1941-0042}
+      \field{journaltitle}{IEEE Transactions on Image Processing}
+      \field{month}{4}
+      \field{note}{Conference Name: IEEE Transactions on Image Processing}
+      \field{number}{4}
+      \field{shorttitle}{Image quality assessment}
+      \field{title}{Image quality assessment: from error visibility to structural similarity}
+      \field{volume}{13}
+      \field{year}{2004}
+      \field{pages}{600\bibrangedash 612}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/TIP.2003.819861
+      \endverb
+      \verb{file}
+      \verb IEEE Xplore Full Text PDF:/home/notchla/Zotero/storage/BDBXK3EV/Wang et al. - 2004 - Image quality assessment from error visibility to.pdf:application/pdf;IEEE Xplore Abstract Record:/home/notchla/Zotero/storage/SJQ9IXSF/1284395.html:text/html
+      \endverb
+      \keyw{Data mining,Degradation,Humans,Image quality,Indexes,Layout,Quality assessment,Transform coding,Visual perception,Visual system}
     \endentry
     \entry{xu_empirical_2015}{article}{}
       \name{author}{4}{}{%

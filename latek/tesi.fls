@@ -105,6 +105,12 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
 INPUT /home/notchla/Documents/Tesi/latek/tesi.aux
@@ -200,8 +206,8 @@ INPUT ../images/cascadetraining.png
 INPUT /home/notchla/Documents/Tesi/latek/../images/multiscale.png
 INPUT ../images/multiscale.png
 INPUT ../images/multiscale.png
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /home/notchla/Documents/Tesi/latek/tesi.aux
 INPUT /home/notchla/Documents/Tesi/latek/tesi.run.xml
 OUTPUT /home/notchla/Documents/Tesi/latek/tesi.run.xml

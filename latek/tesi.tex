@@ -46,6 +46,13 @@
 
 \usepackage{tabto}
 \usepackage[backend=biber]{biblatex}
+
+\usepackage{listings}% http://ctan.org/pkg/listings
+\lstset{
+  basicstyle=\ttfamily,
+  mathescape
+}
+
 \addbibresource{tesi.bib}
 \oddsidemargin=30pt \evensidemargin=20pt%impostano i margini
 %
@@ -391,6 +398,44 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     L_{\text {compound }}=L_{m s e}+w_{p} \cdot L_{\text {multi- } p }+ w_{e} \cdot L_{edge}
     \label{eq:compound loss}
 \end{equation}
+
+\chapter{Risultati}
+  \section{Datasets}
+    Sono stati usati due dataset per valutare il modello, mini-MIAS contenente immagini di mammografie (MMM)\cite{suckling_mammographic_1994} e un dataset di panoramiche dentali (DX) \cite{abdi_panoramic_2017} . MMM \`{e} composto di 322 immagini di risoluzione $1024 \times 1024$, mentre da DX sono state usate XX immagini di risoluzione varia. Entrambi i dataset sono stati scalati ad una risoluzione $512 \times 512$.\\
+    Per ridurre la dimensione della rete da ogni immagine sono state estratte delle patch $64 \times 64$. Il denoising avviene quindi sulle singole patch e successivamente viene ricostrutia l' immagine originale. Questo metodo genera una discontinuit\`{a} tra i valori dei pixel ai bordi delle patch, per ovviare a questo problema le patch vengono estratte dalle immagini usanto 8 pixel di overlap tra una patch e l' altra. Nella ricostruzione dell' immagine intera, dati gli 8 pixel sovrapposti, vengono presi 4 pixel da una patch e 4 pixel dall' altra per ogni coppia di patch con pixel sovrapposti.
+
+    Il rumore di Poisson \`{e} un tipo di rumore dipendente dal segnale sottostante, e non pu\`{o} essere semplicemente sommato al segnale originale come nel caso di AWGN.\\
+    Per generare rumore di Poisson \`{e} stata usata la seguente tecnica sviluppata da Knuth \cite[pp.~137-138]{knuth97}:
+    \begin{lstlisting}
+       L = $e^{-\lambda}$, k = 0, p = 1
+      do:
+        k = k + 1
+        Genera un numero randomico uniforme u in [0, 1]
+        p = p $\times$ u
+      while:
+        p > L
+      return k - 1
+    \end{lstlisting}
+    L' idea dell' algoritmo \`{e} la seguente : Contare il numero di occorrenze di un evento che puo accadere in ogni istante, dato un intervallo di tempo finito, dove la media del numero di occorrenze dell'evento \`{e} $\lambda$. Nel nostro caso $\lambda$ \`{e} uguale al valore dell' i-esimo pixel.
+    TODO inserisci immagini poisson
+  \section{Valutazione del denoising}
+    ssim e psnr
+    tabella gaussian, poisson, gaussian+poisson
+    Per valutare le performance di denoising sono state utilizzate due metriche standard, SSIM e PSNR.
+
+    SSIM tra due immagini $X$ e $R$ \`{e} definito come segue:
+    \begin{equation}
+      \operatorname{SSIM}(X, R)=\frac{\left(2 \mu_{X} \mu_{R}+C_{1}\right)\left(2 \sigma_{X R}+C_{2}\right)}{\left(\mu_{X}^{2}+\mu_{R}^{2}+C_{1}\right)\left(\sigma_{X}^{2}+\sigma_{R}^{2}+C_{2}\right)}
+    \end{equation}
+    dove $\mu_{X}, \mu_{R}, \sigma_{X}^{2}, \sigma_{R}^{2}$ sono rispettivamente le medie e le varianze di $X$ e $R$, $\sigma_{X R}$ \`{e} la covarianza tra $X$ e $R$, e $C1$ e $C2$ sono costanti predefinite \cite{wang_image_2004}.\\
+    SSIM serve a misurare le differenze tra due immagini in termini di luminosit\`{a}, contrasto e struttura. L' output di SSIM \`{e} un valore tra -1 e 1, dove valori vicino a uno indicano risultati migliori.
+
+    Peak Signal-to-noise Ratio (PSNR) \`{e} un importante fattore per valutare il denoising. Rappresenta il rapporto tra la massima potenza di un segnale e la potenza del rumore che ne degrada la rappresentazione. Data un immagine originale $X$ e la stessa immagine sottoposta a denoising $R$, PSNR \`{e} definito cosi :
+    \begin{equation}
+      P S N R=10 \times \log _{10}\left(\frac{255 \times 255}{M S E}\right)
+    \end{equation}
+    considerando 255 come il massimo valore nell' immagine (8 bit per pixel). Valori pi\`{u} alti di PSNR rappresentano una similitudine maggiore tra l' immagine originale e quella pulita dal processo di denoising, rispetto a valori pi\`{u} bassi.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}

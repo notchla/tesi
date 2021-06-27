@@ -1953,6 +1953,10 @@
     <bcf:citekey order="22">deng_imagenet_2009</bcf:citekey>
     <bcf:citekey order="23">he_deep_2015</bcf:citekey>
     <bcf:citekey order="24">he_deep_2015</bcf:citekey>
+    <bcf:citekey order="25">suckling_mammographic_1994</bcf:citekey>
+    <bcf:citekey order="26">abdi_panoramic_2017</bcf:citekey>
+    <bcf:citekey order="27">knuth97</bcf:citekey>
+    <bcf:citekey order="28">wang_image_2004</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
