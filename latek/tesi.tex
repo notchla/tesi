@@ -53,6 +53,8 @@
   mathescape
 }
 
+\usepackage{array}
+
 \addbibresource{tesi.bib}
 \oddsidemargin=30pt \evensidemargin=20pt%impostano i margini
 %
@@ -436,6 +438,21 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \end{equation}
     considerando 255 come il massimo valore nell' immagine (8 bit per pixel). Valori pi\`{u} alti di PSNR rappresentano una similitudine maggiore tra l' immagine originale e quella pulita dal processo di denoising, rispetto a valori pi\`{u} bassi.
 
+      \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+          \hline
+          DN-Resnet & sigma & edge & edge+perceptual\\
+          \hline
+          Parameters & - & 149,344 & 149,344\\
+          \hline
+          Gaussian & \begin{tabular}{@{}c@{}}0.01\\0.02\\0.05\\0.1\end{tabular}& - & -\\
+          \hline
+          Poisson & - & - & $0.9728 \pm 0.0088/40.86 \pm 1.503$\\
+          \hline
+          Poisson - Gaussian & \begin{tabular}{@{}c@{}}0.01\\0.02\\0.05\\0.1\end{tabular} & \begin{tabular}{@{}c@{}} - \\ - \\ - \\ - \end{tabular} & \begin{tabular}{@{}c@{}}$0.9695 \pm 0.0088/40.65 \pm 1.5104$ \\ - \\ - \\ - \end{tabular}\\
+          \hline
+        \end{tabular}
+      \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
