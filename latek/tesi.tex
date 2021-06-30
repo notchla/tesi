@@ -54,6 +54,7 @@
 }
 
 \usepackage{array}
+\usepackage{xcolor}
 
 \addbibresource{tesi.bib}
 \oddsidemargin=30pt \evensidemargin=20pt%impostano i margini
@@ -445,11 +446,11 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
           \hline
           Parameters & - & 149,344 & 149,344\\
           \hline
-          Gaussian & \begin{tabular}{@{}c@{}}0.01\\0.02\\0.05\\0.1\end{tabular}& - & -\\
+          Gaussian & \begin{tabular}{@{}c@{}}0.05\\0.1\end{tabular}& \begin{tabular}{@{}c@{}} \color{blue} $0.9575 \pm 0.008/41.60 \pm 1.434$ \\ $0.9280 \pm 0.008/39.06 \pm 1.339$ \end{tabular} & \begin{tabular}{@{}c@{}} $0.9566 \pm 0.0085/41.34 \pm 1.465$\\ \color{red}$0.9319 \pm 0.0089/39.15 \pm 1.344$ \\ \end{tabular}\\
           \hline
-          Poisson & - & - & $0.9728 \pm 0.0088/40.86 \pm 1.503$\\
+          Poisson & - & $0.9725 \pm 0.009/40.92 \pm 1.51$ & \color{red}$0.9730 \pm 0.0088/40.87 \pm 1.492$\\
           \hline
-          Poisson - Gaussian & \begin{tabular}{@{}c@{}}0.01\\0.02\\0.05\\0.1\end{tabular} & \begin{tabular}{@{}c@{}} - \\ - \\ - \\ - \end{tabular} & \begin{tabular}{@{}c@{}}$0.9695 \pm 0.0088/40.65 \pm 1.5104$ \\ - \\ - \\ - \end{tabular}\\
+          Poisson - Gaussian & \begin{tabular}{@{}c@{}}0.01\\0.02\\0.05\\0.1\end{tabular} & \begin{tabular}{@{}c@{}} $0.9682 \pm 0.0089/40.33 \pm 1.523$\\ \color{blue}$0.9668 \pm 0.0091/40.26 \pm 1.4923$ \\ \color{blue}$0.9491 \pm 0.0103/39.15 \pm 1.4511$ \\ $0.9130 \pm 0.010/36.97 \pm 1.349$ \end{tabular} & \begin{tabular}{@{}c@{}}\color{red}$0.9691 \pm 0.0089/40.37 \pm 1.1499$ \\ $0.9575 \pm 0.0077/39.92 \pm 1.1508$ \\ $0.9489 \pm 0.0096/38.86 \pm 1.4464$ \\ \color{red} $0.9254 \pm 0.0124/37.48 \pm 1.3428$ \end{tabular}\\
           \hline
         \end{tabular}
       \end{center}
