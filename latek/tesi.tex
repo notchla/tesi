@@ -31,6 +31,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per inserire grafici
 \usepackage{graphicx}
 \graphicspath{{../images/}}
+\usepackage{caption}
+\usepackage{subcaption}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per utilizzare font
                                         %   particolari ad esempio
@@ -85,9 +87,7 @@
 \large                                  %aumenta la grandezza del carattere
                                         %   a 14pt
 \em                                     %emfatizza (corsivo) il carattere
-Questa \`e la \textsc{Dedica}:\\
-ognuno pu\`o scrivere quello che vuole, \\
-anche nulla \ldots                      %\ldots lascia tre puntini
+                      %\ldots lascia tre puntini
 \newpage                                %va in una pagina nuova
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,7 +104,11 @@ INTRODUZIONE}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce Introduzione
                                         %   nell'indice
 \addcontentsline{toc}{chapter}{Introduzione}
-Questa \`e l'introduzione.
+Durante la generazione di immagini a raggi X o di immagini tomografiche ci sono molti fattori che contribuiscono alla degradazione dell' immagine finale.
+In particolare negli ultimi anni si \`{e} prestata molta attenzione nel cercare di ridurre la dose di radiazioni a cui \`{e} sottoposto il paziente, ma questo genera un aumento del rumore "quantico" dell' immagine dovuto dall' interazione dei fotoni con i recettori del macchinario.\\
+Vengono descritte dunque quali sono le sorgenti di rumore e di come il rumore possa essere approssimato tramite modelli probabilistici.\\
+Successivamente, viene fatta una panoramica dei metodi "classici" per la rimozione del rumore e viene introdotto il concetto di rete neurale e di come il deep learning possa essere utilizzato per approcciare il problema.\\ Viene poi descritta una particolare rete per il denoising (DN-Resnet), formata da blocchi residui di convoluzioni inseriti per step durante il training della rete. La rete originale utilizza oltre all' errore quadratico medio una funzione di errore basata sui filtri di Sobel. In aggiunta a queste due funzioni viene inserita nella rete una terza funzione di loss (perceptual) basata sulle feature map di un modello (Resnet-50) gia trainato su un dataset di immagini molto grandi, per cercare di migliorare la sfocatura indotta da MSE.\\
+Utilizzando come criterio di confronto SSIM e PSNR dai risultati ottenuti si osserva che per valori alti di rumore la perceptual loss aiuti a migliorare la ricostruzione dell' immagine.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \tableofcontents                        %crea l'indice
@@ -120,18 +124,18 @@ INDICE}}
 \listoftables                           %crea l'elenco delle tabelle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
-\chapter{Rumore e Denoising}                %crea il capitolo
+\chapter{Rumore nelle immagini mediche}                %crea il capitolo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}}
 \pagenumbering{arabic}                  %mette i numeri arabi
-\section{Imaging}                 %crea la sezione
+\section{Medical Imaging}                 %crea la sezione
 Con il termine \textbf{medical imaging} ci si riferisce alla generica tecnica o processo attraveso il quale \`{e} possibile osservare un' area di un organismo non visibile dall'esterno; per analisi cliniche o una rappresentazione visiva delle funzioni di organi e tessuti.\\
 Una \textbf{radiografia} \`{e} una tecnica di imaging che produce un radiogramma. Tale tecnica si basa sull' utilizzo di un fascio di \textbf{fotoni}, come raggi X o raggi Gamma, generati da una sorgente e catturati da un \textbf{recettore}. \\ I raggi durante il passaggio per il corpo interposto tra la sorgente e il recettore vengono assorbiti o attenutati in maniera differente l'uno dall'altro, creando un insieme di raggi di diversa intensit\`{a}.\\ Il recettore trasforma questo insieme di raggi di diversa concentrazione in un immagine "in negativo" del corpo, essendo catturati dal recettore solo i fotoni che non vengono assorbiti dall' oggetto.\\
 L'assorbimento dovuto alle diverse composizioni elementali del corpo gioca un ruolo fondamentale nell' imaging medico. Il processo di assorbimento \`{e} proporzionale al \textbf{numero atomico} della materia attraversata e questo permette di distinguere la materia grigia dalla materia bianca nell'immagine generata. Per esempio tra il sangue e il muscolo non \`{e} osservabile un contrasto elevato, essendo la densit\`{a} degli elementi che li compongono molto simile. Per generare un contrasto tra i due \`{e} necessario iniettare un liquido di contrasto composto da elementi con un alto numero atomico durante l'esposizione ai raggi.\\
 I recettori localizzati in maniera opposta alla sorgente dei raggi, ricevono i fasci di fotoni e generano un segnale elettrico. Questo segnale elettrico deve essere convertito in un segnale digitale da un convertitore analogico/digitale e successivamente in un immagine. \cite{diwakar_review_2018}.
 
 
-\section{Rumore}
+\section{Fattori di disturbo}
 Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine costruita \cite{diwakar_review_2018, manson_image_nodate}, i fattori principali sono :
   \begin{itemize}
     \item Blurring: l' immagine potrebbe risultare sfocata per diverse ragioni, i motivi principali sono:
@@ -157,6 +161,8 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \item Facendo uno studio ed una ottimizzazione della dose di radiazioni le immagini a bassa dose di radiazioni possono essere migliorate.
     \item La qualit\`{a} dell' immagine pu\`{o} essere migliorata sviluppando algoritmi per la rimozione del rumore nelle immagini. Questi algoritmi possono essere successivamente utilizzati per ridurre la dose di radiazioni. Il processo di rimozione di rumore da immagini \`{e} conosciuto con il termine di \textbf{image denoising}.
   \end{enumerate}
+
+\section{Rumore Visivo}
 
   Le radiografie sono caratterizzate da una sensibilit\`{a} ai contrasti che permette di distinguere tra i diversi tessuti molli del corpo umano. Questa caratteristica \`{e} particolarmente influenzata dal rumore, che nuoce alla visualizzazione delle strutture a basso contrasto.\\
   Prima di considerare tecniche di image denoising \'{e} necessario comprendere quali sono le sorgenti principali di rumore visivo:
@@ -225,7 +231,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \begin{figure}
       \begin{center}
         \includegraphics[scale=0.3]{mlp.png}
-        \caption[esempio di Feedforward Neural Network]{Rete neurale a due layer}
+        \caption[Esempio di Feedforward Neural Network]{Rete neurale a due layer}
         \label{fig:prima}
       \end{center}
     \end{figure}
@@ -281,7 +287,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \end{figure}
     Quando si inizializza una rete neurale i suoi pesi sono vicini a zero e la rete restituisce in output valori vicini a zero. Aggiungendo una skip connection, la rete restituir\`{a} in output una copia del suo input; modellando inizialmente la funzione identit\`{a}. Se la funzione target \`{e} abbastanza vicina alla funzione di identit\`{a} (particolarmente vero per il problema del denoising), il residual learning velocizza l' apprendimento dei parametri in maniera considerevole.
 
-\chapter{Denoising Residual Network}
+\chapter{Rete Residuale per la Rimozione del Rumore : DN-Resnet}
   \section{Modellizzazione del Rumore}
     Lo scopo delle tecniche di denoising \`{e} quello di generare una immagine pulita X dato un input rumoroso Y, ottenuto secondo un modello di degradazione $Y = D(X)$.
     Per il rumore Gaussiano additivo (AWGN), il valore del pixel i-esimo  \`{e} :
@@ -304,15 +310,15 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     che \`{e} stato verificato da risultati sperimentali \cite{foi_practical_2008}.
 
   \section{DN-Resnet}
-    DN-Resnet \cite{ren_dn-resnet_2018} consiste in una rete neurale composti da blocchi residui (ResBlocks), inseriti gradualmente nella rete durante il training. Questa strategia di training permette alla rete di convergere pi\`{u} velocemente. In aggiunta al convenzionale \textbf{errore quadratico medio} (MSE) si utilizza anche un funzione di loss \textbf{edge-aware} e una \textbf{perceptual loss} basata su Resnet-50 \cite{he_deep_2015}.\\
-    Aggiungendo in cascata 5 Resblocks la rete raggiunge performance da stato dell' arte su tutti e tre i tipi di rumore, Gaussian, Poisson e Poisson-Gaussian. Rispetto ad altre reti neurali proposte per il problema del denoising, DN-Resnet ha un tempo di training molto minore e pu\`{o} essere eseguita in tempo reale.
+    DN-Resnet (Denoising Residual Network) \cite{ren_dn-resnet_2018} consiste in una rete neurale composti da blocchi residui (ResBlocks), inseriti gradualmente nella rete durante il training. Questa strategia di training permette alla rete di convergere pi\`{u} velocemente. Oltre al convenzionale \textbf{errore quadratico medio} (MSE) si utilizza anche un funzione di loss \textbf{edge-aware}. In aggiunta viene sperimentata una terza funzione, la \textbf{perceptual loss} basata su Resnet-50 \cite{he_deep_2015}.\\
+    Aggiungendo in cascata 5 Resblocks la rete raggiunge performance buone performance su tutti e tre i tipi di rumore, Gaussian, Poisson e Poisson-Gaussian. Rispetto ad altre reti neurali proposte per il problema del denoising, DN-Resnet ha un tempo di training molto minore e pu\`{o} essere eseguita in tempo reale.
 
     Dato un dataset di training $\left\{X_{i}, Y_{i}\right\}, i=1, \ldots, N$ con $N$ esempi, l'obbiettivo \`{e} quello di imparare un modello $S$ che predice immagini pulite $\hat{X}_{i}=S\left(Y_{i}\right)$ .\\
     L' elemento base di DN-Resnet \`{e} un ResBlock semplificato, come mostrato in figura \ref{fig:resblocks}(a). A differenza del ResBlock standard sono stati rimossi i layer di batch normalization \cite{ioffe_batch_2015} e il layer di ReLU dopo la somma residua, perch\`{e} rimuovere questi layer nelle reti residue basate su feature-map non peggiora le performance della rete \cite{lim_enhanced_2017}.
 
     \begin{figure}
       \begin{center}
-        \includegraphics[scale=0.3]{resblocks.png}
+        \includegraphics[scale=0.5]{resblocks.png}
         \caption [ResBlocks in DN-Resnet]{(a) Standard ResBlock, (b) ResBlock in DN-Resnet}
         \label{fig:resblocks}
       \end{center}
@@ -323,7 +329,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
 
     \begin{figure}
       \begin{center}
-        \includegraphics[scale=0.3]{cascadetraining.png}
+        \includegraphics[scale=0.6]{cascadetraining.png}
         \caption [Cascade Training]{Cascade training di DN-Resnet. I cerchi denotano i layer convoluzionari standard, mentri i quadrati i ResBlock.}
         \label{fig:cascade}
       \end{center}
@@ -366,6 +372,24 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \mathbf{G}=\sqrt{\mathbf{G}_{x}^{2}+\mathbf{G}_{y}{ }^{2}}
   \end{equation}
 
+  \begin{figure}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[scale= 0.4]{mias_original_sobel.png}
+      \caption{}
+      \label{fig:original_sobel}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[scale=0.4]{sobel.png}
+      \caption{}
+      \label{fig:sobel}
+    \end{subfigure}
+    \caption[Edge-Map ottenuta con filtri di Sobel]{La figura (a) mostra una mammografia, mentre la figura (b) mostra il risultato del calcolo della magnitudine del gradiente della luminosita, ottenuto con i filtri di Sobel}
+    \label{fig:sobel_}
+  \end{figure}
+
   \section{Perceptual Loss}
   L' errore quadratico medio \ref{eq:mse} calcola la distanza pixel per pixel del l'output del modello con l' immagine target. Questa differenza puntuale tende a lisciare i valori dei pixel e ad aumentare la sfocatura dell' immagine. Per ovviare a questi problemi viene introdotta una \textbf{multi scales perceptual loss} \cite{liang_edcnn_2020}, mostrata nella seguente formula :
   \begin{equation}
@@ -377,7 +401,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
 
 
   \begin{figure}
-    \includegraphics[scale = 0.3]{multiscale.png}
+    \includegraphics[scale = 0.5]{multiscale.png}
     \caption[Multi-scale perceptual loss]{multi-scale perceptual loss basata su Resnet-50, composto da 4 stage principali \cite{he_deep_2015}}
     \label{fig:multiscale}
   \end{figure}
@@ -404,8 +428,8 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
 
 \chapter{Risultati}
   \section{Datasets}
-    Sono stati usati due dataset per valutare il modello, mini-MIAS contenente immagini di mammografie (MMM)\cite{suckling_mammographic_1994} e un dataset di panoramiche dentali (DX) \cite{abdi_panoramic_2017} . MMM \`{e} composto di 322 immagini di risoluzione $1024 \times 1024$, mentre da DX sono state usate XX immagini di risoluzione varia. Entrambi i dataset sono stati scalati ad una risoluzione $512 \times 512$.\\
-    Per ridurre la dimensione della rete da ogni immagine sono state estratte delle patch $64 \times 64$. Il denoising avviene quindi sulle singole patch e successivamente viene ricostrutia l' immagine originale. Questo metodo genera una discontinuit\`{a} tra i valori dei pixel ai bordi delle patch, per ovviare a questo problema le patch vengono estratte dalle immagini usanto 8 pixel di overlap tra una patch e l' altra. Nella ricostruzione dell' immagine intera, dati gli 8 pixel sovrapposti, vengono presi 4 pixel da una patch e 4 pixel dall' altra per ogni coppia di patch con pixel sovrapposti.
+    Sono stati usati due dataset per valutare il modello, mini-MIAS contenente immagini di mammografie (MMM)\cite{suckling_mammographic_1994} e un dataset di panoramiche dentali (DX) \cite{abdi_panoramic_2017} . MMM \`{e} composto di 322 immagini di risoluzione $1024 \times 1024$ divise in 258 per il training e 64 per validation, mentre da DX sono state usate 116 immagini di risoluzione varia, divise in 93 per il training e 23 per il validation. Entrambi i dataset sono stati scalati ad una risoluzione $512 \times 512$.\\
+    Per ridurre la dimensione della rete da ogni immagine sono state estratte delle patch $64 \times 64$. Il denoising avviene quindi sulle singole sottoimmagini e successivamente viene ricostrutia l' immagine originale. Questo metodo genera una discontinuit\`{a} tra i valori dei pixel ai bordi delle sezioni, per ovviare a questo problema le patch vengono estratte dalle immagini usanto 8 pixel di overlap tra una sezione e l' altra. Nella ricostruzione dell' immagine intera, dati gli 8 pixel sovrapposti, vengono presi 4 pixel da una patch e 4 pixel dall' altra per ogni coppia di sottoimmagini con pixel sovrapposti.\\
 
     Il rumore di Poisson \`{e} un tipo di rumore dipendente dal segnale sottostante, e non pu\`{o} essere semplicemente sommato al segnale originale come nel caso di AWGN.\\
     Per generare rumore di Poisson \`{e} stata usata la seguente tecnica sviluppata da Knuth \cite[pp.~137-138]{knuth97}:
@@ -420,10 +444,28 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       return k - 1
     \end{lstlisting}
     L' idea dell' algoritmo \`{e} la seguente : Contare il numero di occorrenze di un evento che puo accadere in ogni istante, dato un intervallo di tempo finito, dove la media del numero di occorrenze dell'evento \`{e} $\lambda$. Nel nostro caso $\lambda$ \`{e} uguale al valore dell' i-esimo pixel.
-    TODO inserisci immagini poisson
+
+    \begin{figure}
+      \centering
+      \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[scale= 0.4]{original_mias.png}
+        \caption{}
+        \label{fig:original_mias}
+      \end{subfigure}%
+      \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[scale=0.4]{poisson_mias.png}
+        \caption{}
+        \label{fig:poisson_mias}
+      \end{subfigure}
+      \caption[Esempio di Rumore di Poisson generato con Knuth]{La figura (a) mostra una mammografia presente nel dataset MMM senza rumore, mentre la figura (b) mostra la stessa immagine con un rumore di Poisson generato con la tecnica di Knuth}
+      \label{fig:original_noise}
+    \end{figure}
+
   \section{Valutazione del denoising}
-    ssim e psnr
-    tabella gaussian, poisson, gaussian+poisson
+    Il modello \`{e} stato implementato in tensorflow usando "adam" come ottimizzatore con parametri di default e per 10 epoche ad ogni step di training.
+
     Per valutare le performance di denoising sono state utilizzate due metriche standard, SSIM e PSNR.
 
     SSIM tra due immagini $X$ e $R$ \`{e} definito come segue:
@@ -439,6 +481,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
     \end{equation}
     considerando 255 come il massimo valore nell' immagine (8 bit per pixel). Valori pi\`{u} alti di PSNR rappresentano una similitudine maggiore tra l' immagine originale e quella pulita dal processo di denoising, rispetto a valori pi\`{u} bassi.
 
+    \begin{table}
       \begin{center}
         \begin{tabular}{|c|c|c|c|}
           \hline
@@ -446,14 +489,53 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
           \hline
           Parameters & - & 149,344 & 149,344\\
           \hline
-          Gaussian & \begin{tabular}{@{}c@{}}0.05\\0.1\end{tabular}& \begin{tabular}{@{}c@{}} \color{blue} $0.9575 \pm 0.008/41.60 \pm 1.434$ \\ $0.9280 \pm 0.008/39.06 \pm 1.339$ \end{tabular} & \begin{tabular}{@{}c@{}} $0.9566 \pm 0.0085/41.34 \pm 1.465$\\ \color{red}$0.9319 \pm 0.0089/39.15 \pm 1.344$ \\ \end{tabular}\\
+          Gaussian & \begin{tabular}{@{}c@{}}0.05\\0.1\end{tabular}& \begin{tabular}{@{}c@{}} \color{blue} $0.958 \pm 0.008/41.60 \pm 1.434$ \\ $0.928 \pm 0.008/39.06 \pm 1.339$ \end{tabular} & \begin{tabular}{@{}c@{}} $0.957 \pm 0.009/41.34 \pm 1.465$\\ \color{red}$0.932 \pm 0.009/39.15 \pm 1.344$ \\ \end{tabular}\\
           \hline
-          Poisson & - & $0.9725 \pm 0.009/40.92 \pm 1.51$ & \color{red}$0.9730 \pm 0.0088/40.87 \pm 1.492$\\
+          Poisson & - & $0.973 \pm 0.009/40.92 \pm 1.510$ & $0.973 \pm 0.009/40.87 \pm 1.492$\\
           \hline
-          Poisson - Gaussian & \begin{tabular}{@{}c@{}}0.01\\0.02\\0.05\\0.1\end{tabular} & \begin{tabular}{@{}c@{}} $0.9682 \pm 0.0089/40.33 \pm 1.523$\\ \color{blue}$0.9668 \pm 0.0091/40.26 \pm 1.4923$ \\ \color{blue}$0.9491 \pm 0.0103/39.15 \pm 1.4511$ \\ $0.9130 \pm 0.010/36.97 \pm 1.349$ \end{tabular} & \begin{tabular}{@{}c@{}}\color{red}$0.9691 \pm 0.0089/40.37 \pm 1.1499$ \\ $0.9575 \pm 0.0077/39.92 \pm 1.1508$ \\ $0.9489 \pm 0.0096/38.86 \pm 1.4464$ \\ \color{red} $0.9254 \pm 0.0124/37.48 \pm 1.3428$ \end{tabular}\\
+          Poisson - Gaussian & \begin{tabular}{@{}c@{}}0.01\\0.02\\0.05\\0.1\end{tabular} & \begin{tabular}{@{}c@{}} $0.968 \pm 0.009/40.33 \pm 1.523$\\ \color{blue} $0.967 \pm 0.009/40.26 \pm 1.492$ \\  $0.949 \pm 0.010/39.15 \pm 1.451$ \\ $0.913 \pm 0.010/36.97 \pm 1.349$ \end{tabular} & \begin{tabular}{@{}c@{}}\color{red}$0.969 \pm 0.009/40.37 \pm 1.150$ \\ $0.958 \pm 0.008/39.92 \pm 1.151$ \\ $0.949 \pm 0.010/38.86 \pm 1.446$ \\ \color{red} $0.925 \pm 0.012/37.48 \pm 1.343$ \end{tabular}\\
           \hline
         \end{tabular}
+        \caption[SSIM/PSNR per diversi rumori e funzioni di loss]{Valutazione su SSIM/PSNR (db) $\pm \sigma$ di DN-Resnet a 13-layer con differenti funzioni di loss, per diversi tipi di rumore. "edge" indica l'utilizzo di mse e edge-loss come funzioni con peso $w_{e} = 0.025$, "edge + perceptual" indica l'utilizzo della compound loss \ref{eq:compound loss} con pesi $w_{e} = 0.025, w_{p} = 0.01$. Sono marcati in blue/rosso valori per cui "edge" e "edge + perceptual" performano meglio rispettivamente, considerando SSIM come criterio}
+        \label{tab:ssim/psnr}
       \end{center}
+    \end{table}
+
+    La tabella \ref{tab:ssim/psnr} mostra la media di SSIM e PSNR e deviazione standard calcolata sul dataset di validazione di MMM. La rete trainata con Perceptual Loss e edge-loss migliora i valori di SSIM di \textbf{0.004} / \textbf{0.012} per i valori pi\`{u} alti di rumore.
+
+    \begin{figure}
+      \centering
+      \begin{subfigure}{.4\textwidth}
+        \centering
+        \includegraphics[scale= 0.3]{original_dental.png}
+        \caption{originale}
+      \end{subfigure}%
+      \begin{subfigure}{.4\textwidth}
+        \centering
+        \includegraphics[scale=0.3]{noise_dental_poisson.png}
+        \caption{poisson ssim $= 0.688$}
+      \end{subfigure}
+      \begin{subfigure}{.4\textwidth}
+        \centering
+        \includegraphics[scale=0.3]{recon_dental_poisson.png}
+        \caption{ricostruzione con edge + perceptual, ssim $= 0.933$}
+      \end{subfigure}
+      \caption[Esempio di ricostruzione di una panoramica dentale]{}
+      \label{fig:esempio_recon}
+    \end{figure}
+
+    \begin{figure}
+      \begin{center}
+        \includegraphics[scale=0.4]{patches_dental.png}
+        \caption [Dettagli di ricostruzione]{In figura sono mostrati dei dettagli dell' immagine \ref{fig:esempio_recon}. La rete riesce a ripristinare correttamente la luminosit\`{a} originale e recuperare alcuni dettagli dei nervi e delle radici dentali.}
+        \label{fig:dettagli_ricostruzione}
+      \end{center}
+    \end{figure}
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
@@ -466,14 +548,15 @@ CONCLUSIONI}]{\fancyplain{}{\bfseries\thepage}}
 CONCLUSIONI}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce Conclusioni
                                         %   nell'indice
-\addcontentsline{toc}{chapter}{Conclusioni} Queste sono le
-conclusioni.ssssssss
+\addcontentsline{toc}{chapter}{Conclusioni}
+Sono stati descritti quali sono i problemi legati all' imaging medico, in particolare quali sono le sorgenti di rumore nella generazione delle immagini.\\
+Vengono spiegate quali sono le tecniche classiche per approcciare il problema del denoising e viene data un introduzione di come il "deep learning" pu\`{o} essere usato come medoto per il denoising.\\ Successivamente viene descritta una rete neurale (DN-Resnet) che utilizza dei blocchi residui e un training a step per migliorare la velocit\`{a} di convergenza del modello. In aggiunta alle funzioni di loss gia presenti nella rete, MSE e una funzione di loss basata sui filtri di Sobel, viene presentata una terza funzione che utilizza le feature map di un modello gia trainato (Resnet-50 sul dataset Imagenet), per calcolare la similitudine nello spazio delle feature delle due reti.\\
+La rete ottiene buoni risultati anche senza tuning degli iper-parametri, utilizzando dataset molto ridotti (n = 258, n=93) e un numero limitato di epoche di training (n = 10) per step. L' utilizzo della perceptual loss migliora le performance della rete in caso di rumore molto forte (gauss, poisson + gauss, $\sigma = 0.1$), migliorando SSIM di 0.04 - 0.12.
 
 \printbibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter*{Ringraziamenti}
 \thispagestyle{empty}
-Qui possiamo ringraziare il mondo intero!!!!!!!!!!\\
-Ovviamente solo se uno vuole, non \`e obbligatorio.
+Ringrazio la Professoressa Elena Loli Piccolomini per avermi proposto ed indirizzato sull' argomento e il dottorando Davide Evangelista per il supporto durante la fase di implementazione. Ringrazio infine tutte le persone che mi hanno supportato e sopportato durante questo percorso di laurea.
 \end{document}
