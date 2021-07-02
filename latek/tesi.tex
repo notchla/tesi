@@ -106,9 +106,9 @@ INTRODUZIONE}}
 \addcontentsline{toc}{chapter}{Introduzione}
 Durante la generazione di immagini a raggi X o di immagini tomografiche ci sono molti fattori che contribuiscono alla degradazione dell' immagine finale.
 In particolare negli ultimi anni si \`{e} prestata molta attenzione nel cercare di ridurre la dose di radiazioni a cui \`{e} sottoposto il paziente, ma questo genera un aumento del rumore "quantico" dell' immagine dovuto dall' interazione dei fotoni con i recettori del macchinario.\\
-Vengono descritte dunque quali sono le sorgenti di rumore e di come il rumore possa essere approssimato tramite modelli probabilistici.\\
-Successivamente, viene fatta una panoramica dei metodi "classici" per la rimozione del rumore e viene introdotto il concetto di rete neurale e di come il deep learning possa essere utilizzato per approcciare il problema.\\ Viene poi descritta una particolare rete per il denoising (DN-Resnet), formata da blocchi residui di convoluzioni inseriti per step durante il training della rete. La rete originale utilizza oltre all' errore quadratico medio una funzione di errore basata sui filtri di Sobel. In aggiunta a queste due funzioni viene inserita nella rete una terza funzione di loss (perceptual) basata sulle feature map di un modello (Resnet-50) gia trainato su un dataset di immagini molto grandi, per cercare di migliorare la sfocatura indotta da MSE.\\
-Utilizzando come criterio di confronto SSIM e PSNR dai risultati ottenuti si osserva che per valori alti di rumore la perceptual loss aiuti a migliorare la ricostruzione dell' immagine.
+Nel primo capitolo vengono descritte dunque quali sono le sorgenti di rumore e di come il rumore possa essere approssimato tramite modelli probabilistici.\\
+Successivamente, viene fatta una panoramica dei metodi "classici" per la rimozione del rumore e viene introdotto il concetto di rete neurale e di come il deep learning possa essere utilizzato per approcciare il problema.\\ Nel secondo capitolo viene descritta una particolare rete per il denoising (DN-Resnet), formata da blocchi residui di convoluzioni inseriti per steps durante il training della rete. La rete originale utilizza oltre all' errore quadratico medio utilizza una funzione di errore basata sui filtri di Sobel. Viene poi sperimentata, in aggiunta a queste due funzioni, una terza funzione di loss (perceptual) basata sulle feature map di un modello (Resnet-50) gia trainato su un dataset di immagini molto grandi, per cercare di migliorare la sfocatura indotta da MSE.\\
+Nel terzo capitolo vengono riportati i risultati del denoising e della perceptual loss, utilizzando come criterio di confronto SSIM e PSNR. Dai risultati numerici ottenuti si osserva che per valori alti di rumore la perceptual loss aiuti a migliorare la ricostruzione dell' immagine.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \tableofcontents                        %crea l'indice
@@ -148,7 +148,7 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
       \item Field of View (FOV): La dimensione della regione anatomica inclusa nella scansione viene detta field of view. Se la dimensione della regione \`{e} troppo grande o troppo piccola, la qualit\`{a} dell' immagine potrebbe risultare degradata.
       \item Artefatti: Gli artefatti sono distorsioni o errori nell' immagine digitale che non dipendono dall' oggetto scansionato. Gli artefatti pi\`{u} comuni sono:
       \begin{enumerate}
-        \item Beam Hardening: Il beam hardening avviene quando l'energia media di un raggio passante per il paziente aumenta. Per evitare che ci\`{o} avvenga alcune soluzioni possono essere messe in pratica, aumentare il kvp(peak kilovoltage), decrementare la grandezza delle slice(in caso di tomografia computerizzata), pre-filtrare i raggi, evitare regioni ad alto assorbimento, soluzioni algorimiche.
+        \item Beam Hardening: Il beam hardening avviene quando l'energia media di un raggio passante per il paziente aumenta. Per evitare che ci\`{o} avvenga alcune soluzioni possono essere messe in pratica, aumentare il kvp(peak kilovoltage), decrementare la grandezza delle slice(in caso di tomografia computerizzata), pre-filtrare i raggi, evitare regioni ad alto assorbimento, soluzioni algoritmiche.
         \item Artefatti metallici: Materiali metallici possono causare soprattutto nelle CT i cosiddetti streaking artifacts (fasci di luce), dovuti dal blocco delle informazioni di proiezione. Per ridurre questo fenomeno \`{e} necessario rimuovere il materiale metallico se possibile.
         \item Movimento del paziente: Il movimenti volontari o involontari del paziente possono produrre streaking artifacts. Si pu\`{o} ridurre il tempo di scansione e migliorare il posizionamento del paziente.
         \item Software e Hardware: Artefatti derivanti da implementazioni o configurazioni scorrette di algoritmi di costruzione dell'immagine digitale o degradazione dei componenti elettronici e meccanici.
@@ -520,19 +520,31 @@ Ci sono molti elementi che possono influenzare la qualit\`{a} dell'immagine cost
         \includegraphics[scale=0.3]{recon_dental_poisson.png}
         \caption{ricostruzione con edge + perceptual, ssim $= 0.933$}
       \end{subfigure}
-      \caption[Esempio di ricostruzione di una panoramica dentale]{}
+      \caption[Esempio di ricostruzione di una panoramica dentale]{Un esempio di ricostruzione di una panoramica dentale}
       \label{fig:esempio_recon}
     \end{figure}
 
     \begin{figure}
-      \begin{center}
-        \includegraphics[scale=0.4]{patches_dental.png}
-        \caption [Dettagli di ricostruzione]{In figura sono mostrati dei dettagli dell' immagine \ref{fig:esempio_recon}. La rete riesce a ripristinare correttamente la luminosit\`{a} originale e recuperare alcuni dettagli dei nervi e delle radici dentali.}
-        \label{fig:dettagli_ricostruzione}
-      \end{center}
+      \centering
+      \begin{subfigure}[b]{1\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{patches_dental3.png}
+        \caption{}
+      \end{subfigure}
+      \begin{subfigure}[b]{1\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{patches_dental2.png}
+        \caption{}
+      \end{subfigure}
+      \caption [Dettagli di ricostruzione]{In figura sono mostrati dei dettagli dell' immagine \ref{fig:esempio_recon}. La rete riesce a ripristinare correttamente la luminosit\`{a} originale e recuperare alcuni dettagli dei nervi e delle radici dentali.}
+      \label{fig:dettagli_ricostruzione}
     \end{figure}
 
-
+    \begin{figure}
+      \includegraphics[width = 1\linewidth]{edge_vs_perc.png}
+      \caption[Differenze tra le ricostruzioni]{La prima riga mostra le patch originali, la seconda la ricostruzione con edge + perceptual e la terza riga la ricostruzione solo con edge. Edge + perceptual riesce a ridurre in parte le sfocatura dei dettagli.}
+      \label{fig:edge_vs_perc}
+    \end{figure}
 
 
 
@@ -558,5 +570,5 @@ La rete ottiene buoni risultati anche senza tuning degli iper-parametri, utilizz
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter*{Ringraziamenti}
 \thispagestyle{empty}
-Ringrazio la Professoressa Elena Loli Piccolomini per avermi proposto ed indirizzato sull' argomento e il dottorando Davide Evangelista per il supporto durante la fase di implementazione. Ringrazio infine tutte le persone che mi hanno supportato e sopportato durante questo percorso di laurea.
+Ringrazio la Prof. Elena Loli Piccolomini per avermi proposto ed indirizzato sull' argomento e il dott. Davide Evangelista per il supporto durante la fase di implementazione. Ringrazio infine tutte le persone che mi hanno supportato e sopportato durante questo percorso di laurea.
 \end{document}

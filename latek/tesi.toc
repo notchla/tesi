@@ -44,4 +44,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Valutazione del denoising}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusioni}{29}
+\contentsline {chapter}{Conclusioni}{30}
